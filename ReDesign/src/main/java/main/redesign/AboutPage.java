@@ -14,16 +14,16 @@ public class AboutPage extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("CS2450 Homework1");
-
+        // adding a test commnet
         Label headerText = new Label("CS2450 Project 1");
         HBox topBox = new HBox(headerText);
         topBox.setAlignment(Pos.TOP_CENTER);
         topBox.setPadding(new Insets(20));
 
-        Button b1 = new Button("Abdul Kalam");
-        Button b2 = new Button("Hamza");
-        Button b3 = new Button("Junaid");
-        Button b4 = new Button("Selim");
+        Button b1 = new Button("Abdul Kalam Syed");
+        Button b2 = new Button("Hamza Imran");
+        Button b3 = new Button("Junaid Bodla");
+        Button b4 = new Button("Selim Khan");
         b1.setMinSize(100,50);
         b2.setMinSize(100,50);
         b3.setMinSize(100,50);
