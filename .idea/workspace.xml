@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb9826b9-3d53-4208-a55d-ab60d4d4f32f" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ReDesign/src/main/java/main/redesign/AboutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/ReDesign/src/main/java/main/redesign/AboutPage.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> edfb22b78aaaa955b6d2b9f307d2f2584fc49ef0
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,17 +69,24 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "16",
     "last_opened_file_path": "C:/Users/syedz/Downloads/openjfx-19.0.2.1_windows-x64_bin-sdk/javafx-sdk-19.0.2.1/lib",
+<<<<<<< HEAD
     "project.structure.last.edited": "SDKs",
+=======
+    "project.structure.last.edited": "Project",
+>>>>>>> edfb22b78aaaa955b6d2b9f307d2f2584fc49ef0
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
+<<<<<<< HEAD
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="main.redesign" />
     </key>
   </component>
+=======
+>>>>>>> edfb22b78aaaa955b6d2b9f307d2f2584fc49ef0
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="WebRedesign.test" />
