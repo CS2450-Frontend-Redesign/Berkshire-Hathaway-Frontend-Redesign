@@ -1,4 +1,4 @@
-package application;
+package main.redesign;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -15,9 +15,6 @@ import javafx.scene.layout.Priority;
 //import javafx.scene.image.ImageView;
 //import javafx.scene.image.Image;
 import javafx.scene.control.Button;
-
-
-
 
 public class Homepage extends Application {
 
