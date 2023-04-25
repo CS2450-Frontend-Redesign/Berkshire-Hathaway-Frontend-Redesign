@@ -1,14 +1,12 @@
 package main.redesign;
 
 import javafx.application.Application;
-import javafx.geometry.Insets;
+import javafx.geometry.*;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.geometry.Pos;
 
 public class NewsPage extends Application {
     @Override
@@ -23,10 +21,11 @@ public class NewsPage extends Application {
 
         // CHANGE NAME WITH PICTURE OF LOGO ***************************************
 
-        /*Image image = new Image("file:/Users/hamzah/school/pictures/BH.png");
-        ImageView companyName = new ImageView(image);*/
-        Label companyName = new Label("BERKSHIRE HATHAWAY");
-        companyName.setStyle("-fx-text-fill: white; -fx-font-size: 18px;");
+        //Image image = new Image("file:/Users/hamzah/school/pictures/BH.png");
+        Image image = new Image("file:/Users/hamzah/school/pictures/BH.png");
+        ImageView companyName = new ImageView(image);
+        /*Label companyName = new Label("BERKSHIRE HATHAWAY");
+        companyName.setStyle("-fx-text-fill: white; -fx-font-size: 18px;");*/
         navbar.getChildren().add(companyName);
 
         // Create region node to push navbar items to the right
@@ -57,19 +56,36 @@ public class NewsPage extends Application {
         root.setTop(navbar);
 
         //CODE TO SWITCH BETWEEN TABS **********************************
+        Label home = new Label("HOME PAGE");
+        root.setCenter(home);
 
+        companyName.setOnMouseClicked(event -> {
+            root.setCenter(home);
+        });
         news.setOnMouseClicked(event -> {
             Label n = new Label("NEWS");
             root.setCenter(n);
         });
-
         reports.setOnMouseClicked(event -> {
             Label r = new Label("REPORTS");
             root.setCenter(r);
         });
+        letters.setOnMouseClicked(event -> {
+            Label l = new Label("LETTERS");
+            root.setCenter(l);
+        });
+        subsidiaries.setOnMouseClicked(event -> {
+            Label s = new Label("SUBSIDIARIES");
+            root.setCenter(s);
+        });
+        about.setOnMouseClicked(event -> {
+            Label a = new Label("ABOUT");
+            root.setCenter(a);
+        });
 
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setScene(scene);
+        primaryStage.setFullScreen(true);
         primaryStage.show();
     }
 
