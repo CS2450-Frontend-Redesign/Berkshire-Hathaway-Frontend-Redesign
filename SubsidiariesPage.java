@@ -214,26 +214,19 @@ public class SubsidiariesPage extends Application {
         contentSection.add(card4, 1, 1);
         root.setCenter(contentSection);
 
-        // Create about section for the website
-        VBox aboutSection = new VBox();
-        aboutSection.setPadding(new Insets(50));
-        aboutSection.setSpacing(10);
-        Label aboutText = new Label("About Us");
-        aboutText.setStyle("-fx-font-size: 30;");
-        Label aboutContent = new Label("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
-        aboutContent.setStyle("-fx-font-size: 16;");
-        aboutSection.getChildren().addAll(aboutText, aboutContent);
-        root.setBottom(aboutSection);
-
         // Create footer section
         HBox footer = new HBox();
-        footer.setPadding(new Insets(10));
+        footer.setPadding(new Insets(15, 50, 15, 50));
         footer.setSpacing(10);
         footer.setStyle("-fx-background-color: #333333;");
-        Label copyright = new Label("Copyright © 2023");
+        
+        
+        Label copyright = new Label("Copyright © 1978-2023");
         copyright.setStyle("-fx-text-fill: white;");
         Label privacyPolicy = new Label("Privacy Policy");
         privacyPolicy.setStyle("-fx-text-fill: white;");
+        Label berkshireInc = new Label("Berkshire Hathaway Inc.");
+        berkshireInc.setStyle("-fx-text-fill: white;");
         Label termsOfService = new Label("Terms of Service");
         termsOfService.setStyle("-fx-text-fill: white;");
         
@@ -252,22 +245,53 @@ public class SubsidiariesPage extends Application {
         Label contactUs = new Label("Contact us:");
         contactUs.setStyle("-fx-text-fill: white;");
         
-        footer.getChildren().addAll(
-                new VBox(connectWithUs,
-                        new HBox(twitter, facebook, instagram )
-                ),
-                new VBox(contactUs,
-                        new Label("Email: contact@website.com"),
-                        new Label("Phone: +1 123-456-7890")
-                ),
-                new VBox(new Label("Legal:"),
-                        privacyPolicy,
-                        termsOfService,
-                        copyright
-                )
-        );
+        Label email = new Label("Email: berkshire@berkshirehathaway.com");
+        email.setStyle("-fx-text-fill: white;");
+        
+        Label phone = new Label("Phone: +1 402-346-1400.");
+        phone.setStyle("-fx-text-fill: white;");
+        
+        Label legal = new Label("Legal:");
+        legal.setStyle("-fx-text-fill: white;");
+        
+
+        // Left content
+        VBox leftContent1 = new VBox(connectWithUs,
+                                    new VBox(twitter, 
+                                    		facebook, 
+                                    		instagram));
+        leftContent1.setSpacing(25);
+        leftContent1.setPadding(new Insets(15, 80, 15, 50));
+        leftContent1.setAlignment(Pos.CENTER_LEFT);
+
+        // Middle content
+        VBox middleContent = new VBox(contactUs,
+                                      email,
+                                      phone);
+        middleContent.setSpacing(25);
+        middleContent.setAlignment(Pos.CENTER);
+        middleContent.setPadding(new Insets(0, 0, 0, 100));
+
+
+        // Right content
+        VBox rightContent = new VBox(legal,
+                                     privacyPolicy,
+                                     termsOfService,
+                                     berkshireInc,
+                                     copyright);
+        rightContent.setSpacing(10);
+        rightContent.setPadding(new Insets(15, 50, 15, 0));
+        rightContent.setAlignment(Pos.CENTER_RIGHT);
+        
+        // Set each content to take up equal space in the footer
+        HBox.setHgrow(leftContent, Priority.ALWAYS);
+        HBox.setHgrow(middleContent, Priority.ALWAYS);
+        HBox.setHgrow(rightContent, Priority.ALWAYS);
+
+        footer.getChildren().addAll(leftContent1, middleContent, rightContent);
         root.setBottom(footer);
-		return root;
+        return root;
+
 	}
 
 	public static void main(String[] args) {
