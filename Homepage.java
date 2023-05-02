@@ -1,25 +1,36 @@
-package main.redesign;
+package application;
 
 import javafx.application.Application;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.Priority;
-//import javafx.scene.image.ImageView;
-//import javafx.scene.image.Image;
-import javafx.scene.control.Button;
 
-public class Homepage extends Application {
+public class HomePage extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+    	BorderPane root = getRoot();
+
+        Scene scene = new Scene(root, 800, 600);
+        primaryStage.setTitle("Home!!!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static BorderPane getRoot() {
         BorderPane root = new BorderPane();
 
         // Create navbar at the top
@@ -28,10 +39,21 @@ public class Homepage extends Application {
         navbar.setSpacing(10);
         navbar.setStyle("-fx-background-color: #363842;");
 
-        // Add company name label to the left of the navbar
-        Label companyName = new Label("BERKSHIRE HATHAWAY");
-        companyName.setStyle("-fx-text-fill: white; -fx-font-size: 18px;");
+        // Add company logo to the left of the navbar
+        Image image = new Image(HomePage.class.getResourceAsStream("BH.png"));
+        ImageView companyName = new ImageView(image);
+        companyName.setFitHeight(50);
+        companyName.setPreserveRatio(true);
         navbar.getChildren().add(companyName);
+        
+        //Home
+        companyName.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showHomePage();
+			}
+		});
 
         // Create region node to push navbar items to the right
         Region region = new Region();
@@ -41,31 +63,96 @@ public class Homepage extends Application {
         HBox navbarItems = new HBox();
         navbarItems.setSpacing(20);
         navbarItems.setAlignment(Pos.CENTER_RIGHT);
+        
+        //Navbar Label Event Handlers
+        
+        //News
         Label news = new Label("News");
         news.setStyle("-fx-text-fill: white;");
+        news.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showNewsPage();
+			}
+        	
+		});
+        
+        //Reports
         Label reports = new Label("Reports");
         reports.setStyle("-fx-text-fill: white;");
+        reports.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showReportsPage();
+			}
+        	
+		});
+        
+        //Letters
         Label letters = new Label("Letters");
         letters.setStyle("-fx-text-fill: white;");
+        letters.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showLettersPage();
+			}
+        	
+		});
+        
+        //Subsidiaries
         Label subsidiaries = new Label("Subsidiaries");
         subsidiaries.setStyle("-fx-text-fill: white;");
+        subsidiaries.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showSubsidiariesPage();
+			}
+        	
+		});
+        
+        //About
         Label about = new Label("About");
         about.setStyle("-fx-text-fill: white;");
-        Label emptyLabel = new Label("");
-        emptyLabel.setStyle("-fx-text-fill: white;");
-        navbarItems.getChildren().addAll(news, reports, letters, subsidiaries, about, emptyLabel);
+        about.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showAboutPage();
+			}
+        	
+		});
+        
+        //Investors
+        Label investors = new Label("Investors");
+        investors.setStyle("-fx-text-fill: white;");
+        investors.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showInvestorsPage();
+			}
+        	
+		});
+        
+        navbarItems.getChildren().addAll(news, reports, letters, subsidiaries, about, investors);
 
         // Add region node and navbar items to navbar
         navbar.getChildren().addAll(region, navbarItems);
 
         root.setTop(navbar);
+
         
 
         // Create hero section with banner image and text
         VBox heroSection = new VBox();
         heroSection.setPadding(new Insets(50));
         heroSection.setSpacing(10);
-        //heroSection.setStyle("-fx-background-image: url('file:/assets/banner.jpg'); -fx-background-size: cover;");
+        navbar.setStyle("-fx-background-color: #363842;");
+        heroSection.setStyle("-fx-background-image: url('file:/ui_2450_project/assets/banner.jpg'); -fx-background-size: cover;");
 
         // Create HBox to hold content on the left half of the section
         HBox leftContent = new HBox();
@@ -94,15 +181,15 @@ public class Homepage extends Application {
         heroSection.getChildren().add(leftContent);
 
         // Create ImageView to hold banner image
-//        ImageView bannerImage = new ImageView(new Image("file:/assets/banner.jpg"));
-//        bannerImage.setFitWidth(400);
-//        bannerImage.setFitHeight(400);
-//        bannerImage.setPreserveRatio(true);
-//        bannerImage.setSmooth(true);
-//        bannerImage.setCache(true);
+        ImageView bannerImage = new ImageView(new Image("file:/ui_2450_project/assets/banner.jpg"));
+        bannerImage.setFitWidth(400);
+        bannerImage.setFitHeight(400);
+        bannerImage.setPreserveRatio(true);
+        bannerImage.setSmooth(true);
+        bannerImage.setCache(true);
 
         // Add banner image to right half of heroSection
-//        heroSection.getChildren().add(bannerImage);
+        heroSection.getChildren().add(bannerImage);
 
         root.setCenter(heroSection);
 
@@ -113,13 +200,13 @@ public class Homepage extends Application {
         contentSection.setHgap(50);
         contentSection.setVgap(50);
         contentSection.setAlignment(Pos.CENTER);
-        Label card1 = new Label("Card 1");
+        Label card1 = new Label("Home 1");
         card1.setStyle("-fx-font-size: 20;");
-        Label card2 = new Label("Card 2");
+        Label card2 = new Label("Home 2");
         card2.setStyle("-fx-font-size: 20;");
-        Label card3 = new Label("Card 3");
+        Label card3 = new Label("Home 3");
         card3.setStyle("-fx-font-size: 20;");
-        Label card4 = new Label("Card 4");
+        Label card4 = new Label("Home 4");
         card4.setStyle("-fx-font-size: 20;");
         contentSection.add(card1, 0, 0);
         contentSection.add(card2, 1, 0);
@@ -142,15 +229,34 @@ public class Homepage extends Application {
         HBox footer = new HBox();
         footer.setPadding(new Insets(10));
         footer.setSpacing(10);
-        footer.setStyle("-fx-background-color: #333333; -fx-text-fill: white;");
+        footer.setStyle("-fx-background-color: #333333;");
         Label copyright = new Label("Copyright © 2023");
+        copyright.setStyle("-fx-text-fill: white;");
         Label privacyPolicy = new Label("Privacy Policy");
+        privacyPolicy.setStyle("-fx-text-fill: white;");
         Label termsOfService = new Label("Terms of Service");
+        termsOfService.setStyle("-fx-text-fill: white;");
+        
+        Label connectWithUs = new Label("Connect with us:");
+        connectWithUs.setStyle("-fx-text-fill: white;");
+        
+        Label twitter = new Label("Twitter");
+        twitter.setStyle("-fx-text-fill: white;");
+        
+        Label facebook = new Label("Facebook");
+        facebook.setStyle("-fx-text-fill: white;");
+        
+        Label instagram = new Label("Instagram");
+        instagram.setStyle("-fx-text-fill: white;");
+        
+        Label contactUs = new Label("Contact us:");
+        contactUs.setStyle("-fx-text-fill: white;");
+        
         footer.getChildren().addAll(
-                new VBox(new Label("Connect with us:"),
-                        new HBox(new Label("Twitter"), new Label("Facebook"), new Label("Instagram"))
+                new VBox(connectWithUs,
+                        new HBox(twitter, facebook, instagram )
                 ),
-                new VBox(new Label("Contact us:"),
+                new VBox(contactUs,
                         new Label("Email: contact@website.com"),
                         new Label("Phone: +1 123-456-7890")
                 ),
@@ -161,14 +267,10 @@ public class Homepage extends Application {
                 )
         );
         root.setBottom(footer);
+		return root;
+	}
 
-        Scene scene = new Scene(root, 800, 600);
-        primaryStage.setTitle("Basic Webpage Layout");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         launch(args);
     }
 }

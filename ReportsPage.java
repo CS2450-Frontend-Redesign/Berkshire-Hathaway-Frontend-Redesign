@@ -18,14 +18,14 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class NewsPage extends Application {
+public class ReportsPage extends Application {
 
     @Override
     public void start(Stage primaryStage) {
     	BorderPane root = getRoot();
 
         Scene scene = new Scene(root, 800, 600);
-        primaryStage.setTitle("News!!!");
+        primaryStage.setTitle("Reports!!!");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -200,13 +200,13 @@ public class NewsPage extends Application {
         contentSection.setHgap(50);
         contentSection.setVgap(50);
         contentSection.setAlignment(Pos.CENTER);
-        Label card1 = new Label("News 1");
+        Label card1 = new Label("Reports 1");
         card1.setStyle("-fx-font-size: 20;");
-        Label card2 = new Label("News 2");
+        Label card2 = new Label("Reports 2");
         card2.setStyle("-fx-font-size: 20;");
-        Label card3 = new Label("News 3");
+        Label card3 = new Label("Reports 3");
         card3.setStyle("-fx-font-size: 20;");
-        Label card4 = new Label("News 4");
+        Label card4 = new Label("Reports 4");
         card4.setStyle("-fx-font-size: 20;");
         contentSection.add(card1, 0, 0);
         contentSection.add(card2, 1, 0);
