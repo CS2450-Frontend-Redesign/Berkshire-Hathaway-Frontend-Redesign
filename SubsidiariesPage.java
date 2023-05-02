@@ -220,7 +220,8 @@ public class SubsidiariesPage extends Application {
         footer.setSpacing(10);
         footer.setStyle("-fx-background-color: #333333;");
         
-        
+        Label legal = new Label("Legal");
+        legal.setStyle("-fx-text-fill: white;");
         Label copyright = new Label("Copyright © 1978-2023");
         copyright.setStyle("-fx-text-fill: white;");
         Label privacyPolicy = new Label("Privacy Policy");
@@ -251,10 +252,6 @@ public class SubsidiariesPage extends Application {
         Label phone = new Label("Phone: +1 402-346-1400.");
         phone.setStyle("-fx-text-fill: white;");
         
-        Label legal = new Label("Legal:");
-        legal.setStyle("-fx-text-fill: white;");
-        
-
         // Left content
         VBox leftContent1 = new VBox(connectWithUs,
                                     new VBox(twitter, 
