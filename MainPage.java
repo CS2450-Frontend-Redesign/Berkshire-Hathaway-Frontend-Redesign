@@ -16,80 +16,81 @@ public class MainPage extends Application {
 
 		showHomePage();
 	}
+	
 
+	private static void showContent(String title, BorderPane root) {
+		ScrollPane scrollPane = new ScrollPane();
+    	scrollPane.setContent(root);
+    	scrollPane.setFitToHeight(true);
+    	scrollPane.setFitToWidth(true);
+    	
+        Scene scene = new Scene(scrollPane, 1600, 900);
+		mainStage.setTitle(title);
+		mainStage.setScene(scene);
+		mainStage.show();
+	}
+
+	
 	// Show HomePage Method
 	public static void showHomePage() {
-		ScrollPane root = HomePage.getRoot();
-
-		Scene scene = new Scene(root, 1280, 720);
-		mainStage.setTitle("Home");
-		mainStage.setScene(scene);
-		mainStage.show();
+		BorderPane root = HomePage.getRoot();
+		String title = "Home";
+		
+		showContent(title, root);
 	}
-
+	
 	// Show NewsPage Method
 	public static void showNewsPage() {
-		ScrollPane root = NewsPage.getRoot();
-
-		Scene scene = new Scene(root, 1280, 720);
-		mainStage.setTitle("News");
-		mainStage.setScene(scene);
-		mainStage.show();
+		BorderPane root = NewsPage.getRoot();
+		String title = "News";
+		
+		showContent(title, root);
 	}
-
+	
 	// Show ReportsPage Method
 	public static void showReportsPage() {
-		ScrollPane root = ReportsPage.getRoot();
+		BorderPane root = ReportsPage.getRoot();
+		String title = "Reports";
+		
+		showContent(title, root);
 
-		Scene scene = new Scene(root, 1280, 720);
-		mainStage.setTitle("Reports");
-		mainStage.setScene(scene);
-		mainStage.show();
 	}
-
+	
 	// Show LettersPage Method
 	public static void showLettersPage() {
-		ScrollPane root = LettersPage.getRoot();
-
-		Scene scene = new Scene(root, 1280, 720);
-		mainStage.setTitle("Letters");
-		mainStage.setScene(scene);
-		mainStage.show();
+		BorderPane root = LettersPage.getRoot();
+		String title = "Letters";
+		
+		showContent(title, root);
 	}
-
+	
 	// Show SubsidiariesPage Method
 	public static void showSubsidiariesPage() {
-		ScrollPane root = SubsidiariesPage.getRoot();
-
-		Scene scene = new Scene(root, 1280, 720);
-		mainStage.setTitle("Subsidiaries");
-		mainStage.setScene(scene);
-		mainStage.show();
+		BorderPane root = SubsidiariesPage.getRoot();
+		String title = "Subsidiaries";
+		
+		showContent(title, root);
 	}
-
-
+			
+		
 	// Show AboutPage Method
 	public static void showAboutPage() {
-		ScrollPane root = AboutPage.getRoot();
-
-		Scene scene = new Scene(root, 1280, 720);
-		mainStage.setTitle("About");
-		mainStage.setScene(scene);
-		mainStage.show();
+		BorderPane root = AboutPage.getRoot();
+		String title = "About";
+		
+		showContent(title, root);
 	}
-
+	
 	// Show InvestorsPage Method
 	public static void showInvestorsPage() {
-		ScrollPane root = InvestorsPage.getRoot();
-
-		Scene scene = new Scene(root, 1280, 720);
-		mainStage.setTitle("Investors");
-		mainStage.setScene(scene);
-		mainStage.show();
+		BorderPane root = InvestorsPage.getRoot();
+		String title = "Investments";
+		
+		showContent(title, root);
 	}
-
-
-
+	
+	
+	
 
 	public static void main(String[] args) {
 		launch(args);
