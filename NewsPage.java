@@ -20,6 +20,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class NewsPage extends Application {
@@ -47,10 +49,13 @@ public class NewsPage extends Application {
         navbar.setStyle("-fx-background-color: #363842;");
 
         // Add company logo to the left of the navbar
+        Rectangle companyName = new Rectangle(0,0,200,60);
+        //companyName.setFill(Color.web("#E5E4DA"));
         Image image = new Image(HomePage.class.getResourceAsStream("BH.png"));
-        ImageView companyName = new ImageView(image);
-        companyName.setFitHeight(50);
-        companyName.setPreserveRatio(true);
+        //ImageView companyName = new ImageView(image);
+        companyName.setFill(new ImagePattern(image));
+        //companyName.setFitHeight(50);
+        //companyName.setPreserveRatio(true);
         navbar.getChildren().add(companyName);
         
         //Home
@@ -75,7 +80,13 @@ public class NewsPage extends Application {
         
         //News
         Label news = new Label("News");
-        news.setStyle("-fx-text-fill: white;");
+        news.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
+        news.setOnMouseEntered(e -> {
+        	news.setUnderline(true);
+        });
+        news.setOnMouseExited(e -> {
+        	news.setUnderline(false);
+        });
         news.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -87,7 +98,13 @@ public class NewsPage extends Application {
         
         //Reports
         Label reports = new Label("Reports");
-        reports.setStyle("-fx-text-fill: white;");
+        reports.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
+        reports.setOnMouseEntered(e -> {
+        	reports.setUnderline(true);
+        });
+        reports.setOnMouseExited(e -> {
+        	reports.setUnderline(false);
+        });
         reports.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -99,7 +116,13 @@ public class NewsPage extends Application {
         
         //Letters
         Label letters = new Label("Letters");
-        letters.setStyle("-fx-text-fill: white;");
+        letters.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
+        letters.setOnMouseEntered(e -> {
+        	letters.setUnderline(true);
+        });
+        letters.setOnMouseExited(e -> {
+        	letters.setUnderline(false);
+        });
         letters.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -111,7 +134,13 @@ public class NewsPage extends Application {
         
         //Subsidiaries
         Label subsidiaries = new Label("Subsidiaries");
-        subsidiaries.setStyle("-fx-text-fill: white;");
+        subsidiaries.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
+        subsidiaries.setOnMouseEntered(e -> {
+        	subsidiaries.setUnderline(true);
+        });
+        subsidiaries.setOnMouseExited(e -> {
+        	subsidiaries.setUnderline(false);
+        });
         subsidiaries.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -123,7 +152,13 @@ public class NewsPage extends Application {
         
         //About
         Label about = new Label("About");
-        about.setStyle("-fx-text-fill: white;");
+        about.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
+        about.setOnMouseEntered(e -> {
+        	about.setUnderline(true);
+        });
+        about.setOnMouseExited(e -> {
+        	about.setUnderline(false);
+        });
         about.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -135,7 +170,13 @@ public class NewsPage extends Application {
         
         //Investments
         Label investments = new Label("Investments");
-        investments.setStyle("-fx-text-fill: white;");
+        investments.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
+        investments.setOnMouseEntered(e -> {
+        	investments.setUnderline(true);
+        });
+        investments.setOnMouseExited(e -> {
+        	investments.setUnderline(false);
+        });
         investments.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
