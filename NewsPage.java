@@ -5,9 +5,14 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Side;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TabPane.TabClosingPolicy;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -148,31 +153,82 @@ public class NewsPage extends Application {
 
         root.setTop(navbar);
 
-        // Create HBox to hold content on the left half of the section
+        // Create HBox to hold content on the left half of the section ********************************
         HBox leftContent = new HBox();
         leftContent.setSpacing(10);
         leftContent.setAlignment(Pos.CENTER_LEFT);
+        // ****************************************************************************************
 
 
-        //Create content section with 4 main cards
-        GridPane contentSection = new GridPane();
-        contentSection.setPadding(new Insets(50));
-        contentSection.setHgap(50);
-        contentSection.setVgap(50);
-        contentSection.setAlignment(Pos.CENTER);
+        // News label on page
         Label card1 = new Label("Latest News");
-        card1.setStyle("-fx-font-size: 20; -fx-text-fill: red;"); //CHANGED ******************************
-        Label card2 = new Label("News 2");
-        card2.setStyle("-fx-font-size: 20;");
-        Label card3 = new Label("News 3");
-        card3.setStyle("-fx-font-size: 20;");
-        Label card4 = new Label("News 4");
-        card4.setStyle("-fx-font-size: 20;");
-        contentSection.add(card1, 0, 0);
-        contentSection.add(card2, 0, 1);
-        contentSection.add(card3, 0, 2);
-        contentSection.add(card4, 0, 3);
-        root.setCenter(contentSection);
+        card1.setStyle("-fx-font-size: 20; -fx-text-fill: red;");
+        Label card2 = new Label("April 27, 2023 News Release");
+        card2.setStyle("-fx-text-fill: blue;");
+        card2.setUnderline(true);
+        card2.setOnMouseEntered(e -> {
+            card2.setStyle("-fx-text-fill: deepskyblue;");
+        });
+        card2.setOnMouseExited(e -> {
+            card2.setStyle("-fx-text-fill: blue;");
+        });
+
+        // Tabpane which contains all relevant information
+        TabPane tabpane = new TabPane();
+        tabpane.setTabClosingPolicy(TabClosingPolicy.UNAVAILABLE);
+        tabpane.setSide(Side.TOP);
+        for (int i = 2023; i >= 1996; i--) {
+            Tab tab = new Tab(Integer.toString(i));
+            Image emptyImage = new Image(HomePage.class.getResourceAsStream("Empty.jpg"));
+            Image newsReleaseImage = new Image(HomePage.class.getResourceAsStream("AnnualNewsRelease.png"));
+            Image quarterlyEarningsImage = new Image(HomePage.class.getResourceAsStream("QuarterlyEarnings.png"));
+            Image annualMeetingsImage = new Image(HomePage.class.getResourceAsStream("AnnualMeetings.png"));
+            Image miscImage = new Image(HomePage.class.getResourceAsStream("Misc.png"));
+            ImageView newsView = new ImageView(emptyImage);
+            Button button = new Button(Integer.toString(i) + " News Releases");
+            Button button2 = new Button(Integer.toString(i) + " Quarterly Earnings");
+            Button button3 = new Button(Integer.toString(i) + " Annual Meetings");
+            Button button4 = new Button(Integer.toString(i) + " Miscellaneous");
+            if (i == 2023) {
+                card2.setOnMouseClicked(e -> {
+                    tabpane.getSelectionModel().select(tab);
+                    newsView.setImage(newsReleaseImage);
+                });
+            }
+            button.setOnAction(e -> {
+                newsView.setImage(newsReleaseImage);
+            });
+            button2.setOnAction(e -> {
+                newsView.setImage(quarterlyEarningsImage);
+            });
+            button3.setOnAction(e -> {
+                newsView.setImage(annualMeetingsImage);
+            });
+            button4.setOnAction(e -> {
+                newsView.setImage(miscImage);
+            });
+            VBox vbox1 = new VBox(30, button, button2, button3, button4);
+            vbox1.setPadding(new Insets(40, 40, 40, 40));
+            vbox1.setAlignment(Pos.CENTER_LEFT);
+            ScrollPane newsScroll = new ScrollPane();
+            newsScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+            newsScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+            newsScroll.setContent(newsView);
+            newsScroll.setPrefViewportWidth(1200);
+            newsScroll.setPrefViewportHeight(1000);
+            //newsScroll.setFitToWidth(true);
+            //newsScroll.setFitToHeight(true);
+            HBox hbox = new HBox(10, vbox1, newsScroll);
+            tab.setContent(hbox);
+            tabpane.getTabs().add(tab);
+        }
+        //Tab tab2 = new Tab("Pre 2001");
+        //tabpane.getTabs().add(tab2);
+        tabpane.setStyle("-fx-border-color: black; -fx-background-color: #e5e4da;");
+        VBox vbox2 = new VBox(10, card1, card2,  tabpane);
+        vbox2.setStyle("-fx-background-color: #e5e4da;");
+        vbox2.setPadding(new Insets(20, 20, 20, 20));
+        root.setCenter(vbox2);
 
         /*Rectangle box = new Rectangle(0, 0);
         box.setFill(null);
