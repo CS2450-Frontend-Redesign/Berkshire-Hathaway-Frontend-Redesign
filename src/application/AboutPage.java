@@ -1,5 +1,7 @@
 package application;
 
+import java.awt.Desktop;
+import java.net.URI;
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -189,6 +191,13 @@ public class AboutPage extends Application {
 	    Label newsText = new Label("Learn about Berkshire Hathaway's \ncommitment to Sustainability");
 	    newsText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button newsButton = new Button("Read More");
+	    newsButton.setOnAction(event -> {
+            try {
+                Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/sustainability/brksustainabilityleadershipcouncilmay2021.pdf"));
+            } catch (Exception r) {
+                System.out.println("Try another link");
+            }
+        });
 	    newsBox.setAlignment(Pos.CENTER_LEFT);
 	    newsBox.setSpacing(20);
 	    newsBox.getChildren().addAll(newsTitle, newsText, newsButton);
@@ -215,6 +224,13 @@ public class AboutPage extends Application {
 	    reportsBox.setAlignment(Pos.CENTER_LEFT);
 	    reportsBox.setSpacing(20);
 	    reportsBox.getChildren().addAll(reportsTitle, reportsText, reportsButton);
+	    reportsButton.setOnAction(event -> {
+            try {
+                Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/sustainability/berkshire2021eeo1.pdf"));
+            } catch (Exception r) {
+                System.out.println("Try another link");
+            }
+        });
 	    reportsBox.setOnMouseEntered(event ->{
 	    	reportsBox.setScaleX(1.03);
 	    	reportsBox.setScaleY(1.03);
@@ -238,6 +254,13 @@ public class AboutPage extends Application {
 	    lettersBox.setAlignment(Pos.CENTER_LEFT);
 	    lettersBox.setSpacing(20);
 	    lettersBox.getChildren().addAll(lettersTitle, lettersText, lettersButton);
+	    lettersButton.setOnAction(event -> {
+            try {
+                Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/donate/jun2321.pdf"));
+            } catch (Exception r) {
+                System.out.println("Try another link");
+            }
+        });
 	    lettersBox.setOnMouseEntered(event ->{
 	    	lettersBox.setScaleX(1.03);
 	    	lettersBox.setScaleY(1.03);
@@ -261,6 +284,13 @@ public class AboutPage extends Application {
 	    subsidiariesBox.setAlignment(Pos.CENTER_LEFT);
 	    subsidiariesBox.setSpacing(20);
 	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, subsidiariesButton);
+	    subsidiariesButton.setOnAction(event -> {
+            try {
+                Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/govern/ethics.pdf"));
+            } catch (Exception r) {
+                System.out.println("Try another link");
+            }
+        });
 	    subsidiariesBox.setOnMouseEntered(event ->{
 	    	subsidiariesBox.setScaleX(1.03);
 	    	subsidiariesBox.setScaleY(1.03);
@@ -284,6 +314,13 @@ public class AboutPage extends Application {
 	    Box5.setAlignment(Pos.CENTER_LEFT);
 	    Box5.setSpacing(20);
 	    Box5.getChildren().addAll(Box5Title, Box5Text, Box5Button);
+	    Box5Button.setOnAction(event -> {
+            try {
+                Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/govern/inside.pdf"));
+            } catch (Exception r) {
+                System.out.println("Try another link");
+            }
+        });
 	    Box5.setOnMouseEntered(event ->{
 	    	Box5.setScaleX(1.03);
 	    	Box5.setScaleY(1.03);
@@ -307,6 +344,13 @@ public class AboutPage extends Application {
 	    Box6.setAlignment(Pos.CENTER_LEFT);
 	    Box6.setSpacing(20);
 	    Box6.getChildren().addAll(Box6Title, Box6Text, Box6Button);
+	    Box6Button.setOnAction(event -> {
+            try {
+                Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/govern/corpgov.pdf"));
+            } catch (Exception r) {
+                System.out.println("Try another link");
+            }
+        });
 	    Box6.setOnMouseEntered(event ->{
 	    	Box6.setScaleX(1.03);
 	    	Box6.setScaleY(1.03);
