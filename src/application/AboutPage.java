@@ -9,12 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -190,7 +192,6 @@ public class AboutPage extends Application {
 /* ------- END OF HEADER SECTION ------- */
 
 
-/* ------- CONTENT SECTION ------- */
 /* -- (between Header and Footer) -- */
 
         // Content Section
@@ -248,6 +249,32 @@ public class AboutPage extends Application {
 	    subsidiariesBox.setAlignment(Pos.CENTER_LEFT);
 	    subsidiariesBox.setSpacing(20);
 	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, subsidiariesButton);
+	    
+	    VBox Box5 = new VBox();
+	    Box5.setPrefWidth(400);
+	    Box5.setMinHeight(300);
+	    Box5.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
+	    Label Box5Title = new Label("About 4");
+	    Box5Title.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label Box5Text = new Label("Berkshire Hathaway wholly owns \n60+ companies");
+	    Box5Text.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    Button Box5Button = new Button("Read More");
+	    Box5.setAlignment(Pos.CENTER_LEFT);
+	    Box5.setSpacing(20);
+	    Box5.getChildren().addAll(Box5Title, Box5Text, Box5Button);
+	    
+	    VBox Box6 = new VBox();
+	    Box6.setPrefWidth(400);
+	    Box6.setMinHeight(300);
+	    Box6.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
+	    Label Box6Title = new Label("About 4");
+	    Box6Title.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label Box6Text = new Label("Berkshire Hathaway wholly owns \n60+ companies");
+	    Box6Text.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    Button Box6Button = new Button("Read More");
+	    Box6.setAlignment(Pos.CENTER_LEFT);
+	    Box6.setSpacing(20);
+	    Box6.getChildren().addAll(Box6Title, Box6Text, Box6Button);
 	
 	    // Create content section with 2x2 grid layout
 	    GridPane contentSection = new GridPane();
@@ -260,14 +287,35 @@ public class AboutPage extends Application {
 	    contentSection.add(reportsBox, 1, 0);
 	    contentSection.add(lettersBox, 0, 1);
 	    contentSection.add(subsidiariesBox, 1, 1);
+	    contentSection.add(Box5, 2, 0);
+	    contentSection.add(Box6, 2, 1);
 	
 //	    centerPane.setTop();
 	    centerPane.setCenter(contentSection);
 //	    centerPane.setBottom();
 	
-	    root.setCenter(centerPane);
+	   // root.setCenter(centerPane);
+	    
 /* ------- END OF CONTENT SECTION ------- */
-
+/* ------- CONTENT SECTION ------- */
+        
+        Rectangle box = new Rectangle(0, 0);
+        box.setFill(null);
+        box.setStroke(Color.web("#15158a",1.0));
+        box.setStrokeWidth(2.0);
+        Label aboutLabel = new Label("Corporate Governance and Sustainability");
+        aboutLabel.setStyle("-fx-background-color: whitesmoke; -fx-text-fill: #542549; -fx-font-size: 24; -fx-padding: 0 5;");
+        AnchorPane pane = new AnchorPane();
+        pane.getChildren().addAll(box, centerPane ,aboutLabel);
+        AnchorPane.setTopAnchor(box, 15.0);
+        AnchorPane.setTopAnchor(aboutLabel, 0.0);
+        AnchorPane.setLeftAnchor(box, 10.0);
+        AnchorPane.setLeftAnchor(aboutLabel, 40.0);
+       // pane.setStyle("-fx-padding: 0 15;");
+        box.widthProperty().bind(pane.widthProperty().subtract(20));
+        box.heightProperty().bind(pane.heightProperty().subtract(25));  
+        contentSection.translateXProperty().bind(root.widthProperty().subtract(contentSection.widthProperty()).divide(2));
+        root.setCenter(pane);
 	    
 /* ------- FOOTER SECTION ------- */
 /* --- (bottom of each page) --- */
