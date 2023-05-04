@@ -191,6 +191,7 @@ public class AboutPage extends Application {
 	    Label newsText = new Label("Learn about Berkshire Hathaway's \ncommitment to Sustainability");
 	    newsText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button newsButton = new Button("Read More");
+	    newsButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
 	    newsButton.setOnAction(event -> {
             try {
                 Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/sustainability/brksustainabilityleadershipcouncilmay2021.pdf"));
@@ -221,6 +222,7 @@ public class AboutPage extends Application {
 	    Label reportsText = new Label("Information regarding our unwavering \nfocus on diversity");
 	    reportsText.setStyle("-fx-font-size: 18;");
 	    Button reportsButton = new Button("Read More");
+	    reportsButton.setStyle("-fx-background-color: null; -fx-text-fill: black; -fx-font-size: 16; -fx-border-color: black; -fx-border-width: 2px;");
 	    reportsBox.setAlignment(Pos.CENTER_LEFT);
 	    reportsBox.setSpacing(20);
 	    reportsBox.getChildren().addAll(reportsTitle, reportsText, reportsButton);
@@ -252,6 +254,7 @@ public class AboutPage extends Application {
 	    lettersText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button lettersButton = new Button("Read More");
 	    lettersBox.setAlignment(Pos.CENTER_LEFT);
+	    lettersButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
 	    lettersBox.setSpacing(20);
 	    lettersBox.getChildren().addAll(lettersTitle, lettersText, lettersButton);
 	    lettersButton.setOnAction(event -> {
@@ -281,6 +284,7 @@ public class AboutPage extends Application {
 	    Label subsidiariesText = new Label("Berkshire Hathaway is built \non a strict foundation of ethics");
 	    subsidiariesText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button subsidiariesButton = new Button("Read More");
+	    subsidiariesButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
 	    subsidiariesBox.setAlignment(Pos.CENTER_LEFT);
 	    subsidiariesBox.setSpacing(20);
 	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, subsidiariesButton);
@@ -311,6 +315,7 @@ public class AboutPage extends Application {
 	    Label Box5Text = new Label("Navigate through our no-tolerance \npolicy on Insider Trading");
 	    Box5Text.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button Box5Button = new Button("Read More");
+	    Box5Button.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
 	    Box5.setAlignment(Pos.CENTER_LEFT);
 	    Box5.setSpacing(20);
 	    Box5.getChildren().addAll(Box5Title, Box5Text, Box5Button);
@@ -341,6 +346,7 @@ public class AboutPage extends Application {
 	    Label Box6Text = new Label("Read through our \nguide on Corporate Governance");
 	    Box6Text.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button Box6Button = new Button("Read More");
+	    Box6Button.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
 	    Box6.setAlignment(Pos.CENTER_LEFT);
 	    Box6.setSpacing(20);
 	    Box6.getChildren().addAll(Box6Title, Box6Text, Box6Button);
