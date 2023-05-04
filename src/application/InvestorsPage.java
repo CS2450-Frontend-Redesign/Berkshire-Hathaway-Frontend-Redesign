@@ -192,7 +192,15 @@ public class InvestorsPage extends Application {
 	    Label secText = new Label("Visit the US Securities and Exchange Commission's \nwebsite to read about Berkshire Hathaway \nfilings.");
 	    secText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button secButton = new Button("Visit SEC");
-	    secButton.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    secButton.setStyle("-fx-background-color: #542549; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px; -fx-font-weight: bold;");
+	    secButton.setOnMouseEntered(event ->{
+	    	secButton.setScaleX(1.03);
+	    	secButton.setScaleY(1.03);
+    	});
+	    secButton.setOnMouseExited(event ->{
+	    	secButton.setScaleX(1);
+	    	secButton.setScaleY(1);
+    	});
 	    secButton.setMinSize(80, 50);
 	    b1.setAlignment(Pos.CENTER_LEFT);
 	    b1.setSpacing(40);
@@ -216,7 +224,15 @@ public class InvestorsPage extends Application {
 	    Label anText = new Label("The 2023 Annual Meeting will be on \nMay 6, 2023");
 	    anText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button anButton = new Button("Read 2023 Shareholders Guide");
-	    anButton.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    anButton.setStyle("-fx-background-color: #363842; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px; -fx-font-weight: bold;");
+	    anButton.setOnMouseEntered(event ->{
+	    	anButton.setScaleX(1.03);
+	    	anButton.setScaleY(1.03);
+    	});
+	    anButton.setOnMouseExited(event ->{
+	    	anButton.setScaleX(1);
+	    	anButton.setScaleY(1);
+    	});
 	    anButton.setMinSize(80, 50);
 	    b2.setAlignment(Pos.CENTER_LEFT);
 	    b2.setSpacing(40);
@@ -238,10 +254,26 @@ public class InvestorsPage extends Application {
 	    Label pres = new Label("Berkshire Hathaway Energy \nInvestor Presentations");
 	    pres.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
 	    Button pres22 = new Button("Read 2022 Berkshire Hathaway Energy Investor Presentation");
-	    pres22.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    pres22.setStyle("-fx-background-color: #542549; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px; -fx-font-weight: bold;");
+	    pres22.setOnMouseEntered(event ->{
+	    	pres22.setScaleX(1.03);
+	    	pres22.setScaleY(1.03);
+    	});
+	    pres22.setOnMouseExited(event ->{
+	    	pres22.setScaleX(1);
+	    	pres22.setScaleY(1);
+    	});
 	    pres22.setMinSize(200, 50);
 	    Button pres21 = new Button("Read 2021 Berkshire Hathaway Energy Investor Presentation");
-	    pres21.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    pres21.setStyle("-fx-background-color: #542549; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px; -fx-font-weight: bold;");
+	    pres21.setOnMouseEntered(event ->{
+	    	pres21.setScaleX(1.03);
+	    	pres21.setScaleY(1.03);
+    	});
+	    pres21.setOnMouseExited(event ->{
+	    	pres21.setScaleX(1);
+	    	pres21.setScaleY(1);
+    	});
 	    pres21.setMinSize(200, 50);
 	    b3.setAlignment(Pos.CENTER_LEFT);
 	    b3.setSpacing(40);
@@ -270,10 +302,26 @@ public class InvestorsPage extends Application {
 	    Label stock = new Label("Common Stock Information");
 	    stock.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
 	    Button comp = new Button("Read Comparative Rights and Relative Prices of Class A and B Stock");
-	    comp.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    comp.setStyle("-fx-background-color: #363842; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px; -fx-font-weight: bold;");
+	    comp.setOnMouseEntered(event ->{
+	    	comp.setScaleX(1.03);
+	    	comp.setScaleY(1.03);
+    	});
+	    comp.setOnMouseExited(event ->{
+	    	comp.setScaleX(1);
+	    	comp.setScaleY(1);
+    	});
 	    comp.setMinSize(200, 50);
 	    Button comm = new Button("Read Common stock and stock transfer agent information");
-	    comm.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    comm.setStyle("-fx-background-color: #363842; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px; -fx-font-weight: bold;");
+	    comm.setOnMouseEntered(event ->{
+	    	comm.setScaleX(1.03);
+	    	comm.setScaleY(1.03);
+    	});
+	    comm.setOnMouseExited(event ->{
+	    	comm.setScaleX(1);
+	    	comm.setScaleY(1);
+    	});
 	    comm.setMinSize(200, 50);
 	    b4.setAlignment(Pos.CENTER_LEFT);
 	    b4.setSpacing(40);
@@ -304,7 +352,15 @@ public class InvestorsPage extends Application {
 	    Label actLbl = new Label("Today I read your February 15 story about \nlast year's Activision purchases by \nBerkshire...");
 	    actLbl.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button actBtn = new Button("Read the Full Document");
-	    actBtn.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    actBtn.setStyle("-fx-background-color: #542549; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px; -fx-font-weight: bold;");
+	    actBtn.setOnMouseEntered(event ->{
+	    	actBtn.setScaleX(1.03);
+	    	actBtn.setScaleY(1.03);
+    	});
+	    actBtn.setOnMouseExited(event ->{
+	    	actBtn.setScaleX(1);
+	    	actBtn.setScaleY(1);
+    	});
 	    actBtn.setMinSize(200, 50);
 	    b5.setAlignment(Pos.CENTER_LEFT);
 	    b5.setSpacing(40);
