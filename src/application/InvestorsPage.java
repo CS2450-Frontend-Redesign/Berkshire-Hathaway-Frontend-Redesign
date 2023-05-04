@@ -201,7 +201,7 @@ public class InvestorsPage extends Application {
 	    newsBox.setPrefWidth(400);
 	    newsBox.setMinHeight(300);
 	    newsBox.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
-	    Label newsTitle = new Label("Investments 1");
+	    Label newsTitle = new Label("Investments");
 	    newsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
 	    Label newsText = new Label("The latest news from Berkshire \nHathaway");
 	    newsText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
@@ -214,7 +214,7 @@ public class InvestorsPage extends Application {
 	    reportsBox.setMaxWidth(400);
 	    reportsBox.setMinHeight(300);
 	    reportsBox.setStyle("-fx-background-color: #E5E4DA; -fx-padding: 40;");
-	    Label reportsTitle = new Label("Investments 2");
+	    Label reportsTitle = new Label("Investments");
 	    reportsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold;");
 	    Label reportsText = new Label("Annual and quarterly reports from \n1995 to 2023");
 	    reportsText.setStyle("-fx-font-size: 18;");
@@ -227,7 +227,7 @@ public class InvestorsPage extends Application {
 	    lettersBox.setPrefWidth(400);
 	    lettersBox.setMinHeight(300);
 	    lettersBox.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
-	    Label lettersTitle = new Label("Investments 3");
+	    Label lettersTitle = new Label("Investments");
 	    lettersTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
 	    Label lettersText = new Label("Shareholder letters from \nWarren Buffet and Charlie Munger");
 	    lettersText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
