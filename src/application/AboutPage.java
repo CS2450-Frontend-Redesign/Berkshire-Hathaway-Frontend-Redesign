@@ -200,81 +200,141 @@ public class AboutPage extends Application {
 	    // Create Vboxes to hold card contents
 	    VBox newsBox = new VBox();
 	    newsBox.setPrefWidth(400);
-	    newsBox.setMinHeight(300);
+	    newsBox.setMinHeight(350);
 	    newsBox.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
-	    Label newsTitle = new Label("About 1");
+	    Label newsTitle = new Label("Sustainability");
 	    newsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label newsText = new Label("The latest news from Berkshire \nHathaway");
+	    Label newsText = new Label("Learn about Berkshire Hathaway's \ncommitment to Sustainability");
 	    newsText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button newsButton = new Button("Read More");
 	    newsBox.setAlignment(Pos.CENTER_LEFT);
 	    newsBox.setSpacing(20);
 	    newsBox.getChildren().addAll(newsTitle, newsText, newsButton);
+    	newsBox.setOnMouseEntered(event ->{
+    		newsBox.setScaleX(1.03);
+    		newsBox.setScaleY(1.03);
+    		newsTitle.setUnderline(true);
+    	});
+    	newsBox.setOnMouseExited(event ->{
+    		newsBox.setScaleX(1);
+    		newsBox.setScaleY(1);
+    		newsTitle.setUnderline(false);
+    	});
 
 	    VBox reportsBox = new VBox();
 	    reportsBox.setMaxWidth(400);
-	    reportsBox.setMinHeight(300);
+	    reportsBox.setMinHeight(350);
 	    reportsBox.setStyle("-fx-background-color: #E5E4DA; -fx-padding: 40;");
-	    Label reportsTitle = new Label("About 2");
+	    Label reportsTitle = new Label("Diversity");
 	    reportsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold;");
-	    Label reportsText = new Label("Annual and quarterly reports from \n1995 to 2023");
+	    Label reportsText = new Label("Information regarding our unwavering \nfocus on diversity");
 	    reportsText.setStyle("-fx-font-size: 18;");
 	    Button reportsButton = new Button("Read More");
 	    reportsBox.setAlignment(Pos.CENTER_LEFT);
 	    reportsBox.setSpacing(20);
 	    reportsBox.getChildren().addAll(reportsTitle, reportsText, reportsButton);
+	    reportsBox.setOnMouseEntered(event ->{
+	    	reportsBox.setScaleX(1.03);
+	    	reportsBox.setScaleY(1.03);
+	    	reportsTitle.setUnderline(true);
+    	});
+	    reportsBox.setOnMouseExited(event ->{
+	    	reportsBox.setScaleX(1);
+	    	reportsBox.setScaleY(1);
+	    	reportsTitle.setUnderline(false);
+    	});
 	
 	    VBox lettersBox = new VBox();
 	    lettersBox.setPrefWidth(400);
-	    lettersBox.setMinHeight(300);
+	    lettersBox.setMinHeight(350);
 	    lettersBox.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
-	    Label lettersTitle = new Label("About 3");
+	    Label lettersTitle = new Label("Contributions to \nFive Foundations");
 	    lettersTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label lettersText = new Label("Shareholder letters from \nWarren Buffet and Charlie Munger");
+	    Label lettersText = new Label("Explore Warren Buffet's generous \ncontributions to several organizations");
 	    lettersText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button lettersButton = new Button("Read More");
 	    lettersBox.setAlignment(Pos.CENTER_LEFT);
 	    lettersBox.setSpacing(20);
 	    lettersBox.getChildren().addAll(lettersTitle, lettersText, lettersButton);
+	    lettersBox.setOnMouseEntered(event ->{
+	    	lettersBox.setScaleX(1.03);
+	    	lettersBox.setScaleY(1.03);
+	    	lettersTitle.setUnderline(true);
+    	});
+	    lettersBox.setOnMouseExited(event ->{
+	    	lettersBox.setScaleX(1);
+	    	lettersBox.setScaleY(1);
+	    	lettersTitle.setUnderline(false);
+    	});
 	
 	    VBox subsidiariesBox = new VBox();
 	    subsidiariesBox.setPrefWidth(400);
-	    subsidiariesBox.setMinHeight(300);
+	    subsidiariesBox.setMinHeight(350);
 	    subsidiariesBox.setStyle("-fx-background-color: #15158A; -fx-padding: 40;");
-	    Label subsidiariesTitle = new Label("About 4");
+	    Label subsidiariesTitle = new Label("Code of Business \nConduct and Ethics");
 	    subsidiariesTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label subsidiariesText = new Label("Berkshire Hathaway wholly owns \n60+ companies");
+	    Label subsidiariesText = new Label("Berkshire Hathaway is built \non a strict foundation of ethics");
 	    subsidiariesText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button subsidiariesButton = new Button("Read More");
 	    subsidiariesBox.setAlignment(Pos.CENTER_LEFT);
 	    subsidiariesBox.setSpacing(20);
 	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, subsidiariesButton);
+	    subsidiariesBox.setOnMouseEntered(event ->{
+	    	subsidiariesBox.setScaleX(1.03);
+	    	subsidiariesBox.setScaleY(1.03);
+	    	subsidiariesTitle.setUnderline(true);
+    	});
+	    subsidiariesBox.setOnMouseExited(event ->{
+	    	subsidiariesBox.setScaleX(1);
+	    	subsidiariesBox.setScaleY(1);
+	    	subsidiariesTitle.setUnderline(false);
+    	});
 	    
 	    VBox Box5 = new VBox();
 	    Box5.setPrefWidth(400);
-	    Box5.setMinHeight(300);
+	    Box5.setMinHeight(350);
 	    Box5.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
-	    Label Box5Title = new Label("About 4");
+	    Label Box5Title = new Label("Insider Trading Policy");
 	    Box5Title.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label Box5Text = new Label("Berkshire Hathaway wholly owns \n60+ companies");
+	    Label Box5Text = new Label("Navigate through our no-tolerance \npolicy on Insider Trading");
 	    Box5Text.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button Box5Button = new Button("Read More");
 	    Box5.setAlignment(Pos.CENTER_LEFT);
 	    Box5.setSpacing(20);
 	    Box5.getChildren().addAll(Box5Title, Box5Text, Box5Button);
+	    Box5.setOnMouseEntered(event ->{
+	    	Box5.setScaleX(1.03);
+	    	Box5.setScaleY(1.03);
+	    	Box5Title.setUnderline(true);
+    	});
+	    Box5.setOnMouseExited(event ->{
+	    	Box5.setScaleX(1);
+	    	Box5.setScaleY(1);
+	    	Box5Title.setUnderline(false);
+    	});
 	    
 	    VBox Box6 = new VBox();
 	    Box6.setPrefWidth(400);
-	    Box6.setMinHeight(300);
+	    Box6.setMinHeight(350);
 	    Box6.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
-	    Label Box6Title = new Label("About 4");
+	    Label Box6Title = new Label("Corporate \nGovernance Guide");
 	    Box6Title.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label Box6Text = new Label("Berkshire Hathaway wholly owns \n60+ companies");
+	    Label Box6Text = new Label("Read through our \nguide on Corporate Governance");
 	    Box6Text.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button Box6Button = new Button("Read More");
 	    Box6.setAlignment(Pos.CENTER_LEFT);
 	    Box6.setSpacing(20);
 	    Box6.getChildren().addAll(Box6Title, Box6Text, Box6Button);
+	    Box6.setOnMouseEntered(event ->{
+	    	Box6.setScaleX(1.03);
+	    	Box6.setScaleY(1.03);
+	    	Box6Title.setUnderline(true);
+    	});
+	    Box6.setOnMouseExited(event ->{
+	    	Box6.setScaleX(1);
+	    	Box6.setScaleY(1);
+	    	Box6Title.setUnderline(false);
+    	});
 	
 	    // Create content section with 2x2 grid layout
 	    GridPane contentSection = new GridPane();
