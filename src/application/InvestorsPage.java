@@ -74,7 +74,7 @@ public class InvestorsPage extends Application {
         //Navbar Label Event Handlers
         
         //News
-        Label news = new Label("News");
+        Label news = new Label("News & Reports");
         news.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
         news.setOnMouseEntered(e -> {
         	news.setUnderline(true);
@@ -87,24 +87,6 @@ public class InvestorsPage extends Application {
 			@Override
 			public void handle(Event arg0) {
 				MainPage.showNewsPage();
-			}
-        	
-		});
-        
-        //Reports
-        Label reports = new Label("Reports");
-        reports.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
-        reports.setOnMouseEntered(e -> {
-        	reports.setUnderline(true);
-        });
-        reports.setOnMouseExited(e -> {
-        	reports.setUnderline(false);
-        });
-        reports.setOnMouseClicked(new EventHandler<Event>() {
-
-			@Override
-			public void handle(Event arg0) {
-				MainPage.showReportsPage();
 			}
         	
 		});
@@ -181,7 +163,7 @@ public class InvestorsPage extends Application {
         	
 		});
         
-        navbarItems.getChildren().addAll(news, reports, letters, subsidiaries, about, investments);
+        navbarItems.getChildren().addAll(news, letters, subsidiaries, about, investments);
 
         // Add region node and navbar items to navbar
         navbar.getChildren().addAll(region, navbarItems);

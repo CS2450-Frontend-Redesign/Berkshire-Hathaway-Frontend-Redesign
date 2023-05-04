@@ -42,18 +42,9 @@ public class MainPage extends Application {
 	// Show NewsPage Method
 	public static void showNewsPage() {
 		BorderPane root = NewsPage.getRoot();
-		String title = "News";
+		String title = "News & Reports";
 		
 		showContent(title, root);
-	}
-	
-	// Show ReportsPage Method
-	public static void showReportsPage() {
-		BorderPane root = ReportsPage.getRoot();
-		String title = "Reports";
-		
-		showContent(title, root);
-
 	}
 	
 	// Show LettersPage Method
