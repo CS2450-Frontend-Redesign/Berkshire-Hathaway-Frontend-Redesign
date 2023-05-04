@@ -28,7 +28,7 @@ public class InvestorsPage extends Application {
     public void start(Stage primaryStage) {
     	BorderPane root = getRoot();
 
-        Scene scene = new Scene(root, 1280, 720);
+        Scene scene = new Scene(root, 1366, 768);
         primaryStage.setTitle("Investors!!!");
         primaryStage.setScene(scene);
         primaryStage.show();

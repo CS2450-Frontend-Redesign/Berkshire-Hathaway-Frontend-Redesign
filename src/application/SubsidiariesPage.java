@@ -28,7 +28,7 @@ public class SubsidiariesPage extends Application {
     public void start(Stage primaryStage) {
     	BorderPane root = getRoot();
 
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 1366, 768);
         primaryStage.setTitle("Subsidiaries!!!");
         primaryStage.setScene(scene);
         primaryStage.show();

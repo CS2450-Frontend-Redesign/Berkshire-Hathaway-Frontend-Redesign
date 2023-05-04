@@ -29,7 +29,7 @@ public class AboutPage extends Application {
     public void start(Stage primaryStage) {
     	BorderPane root = getRoot();
 
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 1366, 768);
         primaryStage.setTitle("About!!!");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -175,24 +175,33 @@ public class AboutPage extends Application {
         root.setTop(navbar);
 /* ------- END OF HEADER SECTION ------- */
 
-
+/* ------- CONTENT SECTION ------- */
 /* -- (between Header and Footer) -- */
 
         // Content Section
         BorderPane centerPane = new BorderPane();
+        
 
 	    // Create Vboxes to hold card contents
 	    VBox newsBox = new VBox();
-	    newsBox.setPrefWidth(400);
+	    newsBox.setPrefWidth(380);
 	    newsBox.setMinHeight(350);
 	    newsBox.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
 	    Label newsTitle = new Label("Sustainability");
 	    newsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
 	    Label newsText = new Label("Learn about Berkshire Hathaway's \ncommitment to Sustainability");
 	    newsText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
-	    Button newsButton = new Button("Read More");
-	    newsButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
-	    newsButton.setOnAction(event -> {
+	    Button susButton = new Button("Read More");
+	    susButton.setOnMouseEntered(event ->{
+	    	susButton.setScaleX(1.03);
+	    	susButton.setScaleY(1.03);
+    	});
+	    susButton.setOnMouseExited(event ->{
+	    	susButton.setScaleX(1);
+	    	susButton.setScaleY(1);
+    	});
+	    susButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    susButton.setOnAction(event -> {
             try {
                 Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/sustainability/brksustainabilityleadershipcouncilmay2021.pdf"));
             } catch (Exception r) {
@@ -201,7 +210,7 @@ public class AboutPage extends Application {
         });
 	    newsBox.setAlignment(Pos.CENTER_LEFT);
 	    newsBox.setSpacing(20);
-	    newsBox.getChildren().addAll(newsTitle, newsText, newsButton);
+	    newsBox.getChildren().addAll(newsTitle, newsText, susButton);
     	newsBox.setOnMouseEntered(event ->{
     		newsBox.setScaleX(1.03);
     		newsBox.setScaleY(1.03);
@@ -219,14 +228,22 @@ public class AboutPage extends Application {
 	    reportsBox.setStyle("-fx-background-color: #E5E4DA; -fx-padding: 40;");
 	    Label reportsTitle = new Label("Diversity");
 	    reportsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold;");
-	    Label reportsText = new Label("Information regarding our unwavering \nfocus on diversity");
+	    Label reportsText = new Label("Information regarding our \nunwavering focus on diversity");
 	    reportsText.setStyle("-fx-font-size: 18;");
-	    Button reportsButton = new Button("Read More");
-	    reportsButton.setStyle("-fx-background-color: null; -fx-text-fill: black; -fx-font-size: 16; -fx-border-color: black; -fx-border-width: 2px;");
+	    Button divButton = new Button("Read More");
+	    divButton.setOnMouseEntered(event ->{
+	    	divButton.setScaleX(1.03);
+	    	divButton.setScaleY(1.03);
+    	});
+	    divButton.setOnMouseExited(event ->{
+	    	divButton.setScaleX(1);
+	    	divButton.setScaleY(1);
+    	});
+	    divButton.setStyle("-fx-background-color: null; -fx-text-fill: black; -fx-font-size: 16; -fx-border-color: black; -fx-border-width: 2px;");
 	    reportsBox.setAlignment(Pos.CENTER_LEFT);
 	    reportsBox.setSpacing(20);
-	    reportsBox.getChildren().addAll(reportsTitle, reportsText, reportsButton);
-	    reportsButton.setOnAction(event -> {
+	    reportsBox.getChildren().addAll(reportsTitle, reportsText, divButton);
+	    divButton.setOnAction(event -> {
             try {
                 Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/sustainability/berkshire2021eeo1.pdf"));
             } catch (Exception r) {
@@ -245,19 +262,27 @@ public class AboutPage extends Application {
     	});
 	
 	    VBox lettersBox = new VBox();
-	    lettersBox.setPrefWidth(400);
+	    lettersBox.setPrefWidth(380);
 	    lettersBox.setMinHeight(350);
 	    lettersBox.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
 	    Label lettersTitle = new Label("Contributions to \nFive Foundations");
 	    lettersTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
 	    Label lettersText = new Label("Explore Warren Buffet's generous \ncontributions to several organizations");
 	    lettersText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
-	    Button lettersButton = new Button("Read More");
+	    Button contButton = new Button("Read More");
+	    contButton.setOnMouseEntered(event ->{
+	    	contButton.setScaleX(1.03);
+	    	contButton.setScaleY(1.03);
+    	});
+	    contButton.setOnMouseExited(event ->{
+	    	contButton.setScaleX(1);
+	    	contButton.setScaleY(1);
+    	});
 	    lettersBox.setAlignment(Pos.CENTER_LEFT);
-	    lettersButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    contButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
 	    lettersBox.setSpacing(20);
-	    lettersBox.getChildren().addAll(lettersTitle, lettersText, lettersButton);
-	    lettersButton.setOnAction(event -> {
+	    lettersBox.getChildren().addAll(lettersTitle, lettersText, contButton);
+	    contButton.setOnAction(event -> {
             try {
                 Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/donate/jun2321.pdf"));
             } catch (Exception r) {
@@ -276,19 +301,27 @@ public class AboutPage extends Application {
     	});
 	
 	    VBox subsidiariesBox = new VBox();
-	    subsidiariesBox.setPrefWidth(400);
+	    subsidiariesBox.setPrefWidth(380);
 	    subsidiariesBox.setMinHeight(350);
 	    subsidiariesBox.setStyle("-fx-background-color: #15158A; -fx-padding: 40;");
 	    Label subsidiariesTitle = new Label("Code of Business \nConduct and Ethics");
 	    subsidiariesTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
 	    Label subsidiariesText = new Label("Berkshire Hathaway is built \non a strict foundation of ethics");
 	    subsidiariesText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
-	    Button subsidiariesButton = new Button("Read More");
-	    subsidiariesButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    Button codeButton = new Button("Read More");
+	    codeButton.setOnMouseEntered(event ->{
+	    	codeButton.setScaleX(1.03);
+	    	codeButton.setScaleY(1.03);
+    	});
+	    codeButton.setOnMouseExited(event ->{
+	    	codeButton.setScaleX(1);
+	    	codeButton.setScaleY(1);
+    	});
+	    codeButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
 	    subsidiariesBox.setAlignment(Pos.CENTER_LEFT);
 	    subsidiariesBox.setSpacing(20);
-	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, subsidiariesButton);
-	    subsidiariesButton.setOnAction(event -> {
+	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, codeButton);
+	    codeButton.setOnAction(event -> {
             try {
                 Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/govern/ethics.pdf"));
             } catch (Exception r) {
@@ -307,14 +340,22 @@ public class AboutPage extends Application {
     	});
 	    
 	    VBox Box5 = new VBox();
-	    Box5.setPrefWidth(400);
+	    Box5.setPrefWidth(380);
 	    Box5.setMinHeight(350);
 	    Box5.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
-	    Label Box5Title = new Label("Insider Trading Policy");
+	    Label Box5Title = new Label("Insider Trading \nPolicy");
 	    Box5Title.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
 	    Label Box5Text = new Label("Navigate through our no-tolerance \npolicy on Insider Trading");
 	    Box5Text.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button Box5Button = new Button("Read More");
+	    Box5Button.setOnMouseEntered(event ->{
+	    	Box5Button.setScaleX(1.03);
+	    	Box5Button.setScaleY(1.03);
+    	});
+	    Box5Button.setOnMouseExited(event ->{
+	    	Box5Button.setScaleX(1);
+	    	Box5Button.setScaleY(1);
+    	});
 	    Box5Button.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
 	    Box5.setAlignment(Pos.CENTER_LEFT);
 	    Box5.setSpacing(20);
@@ -338,7 +379,7 @@ public class AboutPage extends Application {
     	});
 	    
 	    VBox Box6 = new VBox();
-	    Box6.setPrefWidth(400);
+	    Box6.setPrefWidth(380);
 	    Box6.setMinHeight(350);
 	    Box6.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
 	    Label Box6Title = new Label("Corporate \nGovernance Guide");
@@ -346,6 +387,14 @@ public class AboutPage extends Application {
 	    Label Box6Text = new Label("Read through our \nguide on Corporate Governance");
 	    Box6Text.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button Box6Button = new Button("Read More");
+	    Box6Button.setOnMouseEntered(event ->{
+	    	Box6Button.setScaleX(1.03);
+	    	Box6Button.setScaleY(1.03);
+    	});
+	    Box6Button.setOnMouseExited(event ->{
+	    	Box6Button.setScaleX(1);
+	    	Box6Button.setScaleY(1);
+    	});
 	    Box6Button.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
 	    Box6.setAlignment(Pos.CENTER_LEFT);
 	    Box6.setSpacing(20);
@@ -387,9 +436,6 @@ public class AboutPage extends Application {
 //	    centerPane.setBottom();
 	
 	   // root.setCenter(centerPane);
-	    
-/* ------- END OF CONTENT SECTION ------- */
-/* ------- CONTENT SECTION ------- */
         
         Rectangle box = new Rectangle(0, 0);
         box.setFill(null);
@@ -408,6 +454,8 @@ public class AboutPage extends Application {
         box.heightProperty().bind(pane.heightProperty().subtract(25));  
         contentSection.translateXProperty().bind(root.widthProperty().subtract(contentSection.widthProperty()).divide(2));
         root.setCenter(pane);
+        
+/* ------- END OF CONTENT SECTION ------- */
 	    
 /* ------- FOOTER SECTION ------- */
 /* --- (bottom of each page) --- */

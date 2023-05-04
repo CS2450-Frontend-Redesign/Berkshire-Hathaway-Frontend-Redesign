@@ -1,5 +1,8 @@
 package application;
 
+import java.awt.Desktop;
+import java.net.URI;
+
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -30,7 +33,7 @@ public class HomePage extends Application {
     	ScrollPane scrollPane = new ScrollPane();
     	scrollPane.setContent(root);
 
-        Scene scene = new Scene(scrollPane, 1600, 900);
+        Scene scene = new Scene(scrollPane, 1366, 768);
         primaryStage.setTitle("Home!!!");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -191,7 +194,9 @@ public class HomePage extends Application {
         // Content Section
         BorderPane centerPane = new BorderPane();
 
-	    // Create Vboxes to hold card contents
+// Create VBoxes to hold card contents
+        
+ // News Box Section
 	    VBox newsBox = new VBox();
 	    newsBox.setPrefWidth(400);
 	    newsBox.setMinHeight(300);
@@ -201,10 +206,28 @@ public class HomePage extends Application {
 	    Label newsText = new Label("The latest news from Berkshire \nHathaway");
 	    newsText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button newsButton = new Button("Read News");
+	    newsButton.setStyle("-fx-background-color: #363842; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    newsButton.setOnMouseEntered(event ->{
+	    	newsButton.setScaleX(1.03);
+	    	newsButton.setScaleY(1.03);
+    	});
+	    newsButton.setOnMouseExited(event ->{
+	    	newsButton.setScaleX(1);
+	    	newsButton.setScaleY(1);
+    	});
+	    newsButton.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showNewsPage();
+			}
+        	
+		});
 	    newsBox.setAlignment(Pos.CENTER_LEFT);
 	    newsBox.setSpacing(20);
 	    newsBox.getChildren().addAll(newsTitle, newsText, newsButton);
-
+	    
+// Reports Box Section
 	    VBox reportsBox = new VBox();
 	    reportsBox.setMaxWidth(400);
 	    reportsBox.setMinHeight(300);
@@ -214,10 +237,28 @@ public class HomePage extends Application {
 	    Label reportsText = new Label("Annual and quarterly reports from \n1995 to 2023");
 	    reportsText.setStyle("-fx-font-size: 18;");
 	    Button reportsButton = new Button("Read Reports");
+	    reportsButton.setStyle("-fx-background-color: #E5E4DA; -fx-text-fill: #000000; -fx-font-size: 16; -fx-border-color: black; -fx-border-width: 2px;");
+	    reportsButton.setOnMouseEntered(event ->{
+	    	reportsButton.setScaleX(1.03);
+	    	reportsButton.setScaleY(1.03);
+    	});
+	    reportsButton.setOnMouseExited(event ->{
+	    	reportsButton.setScaleX(1);
+	    	reportsButton.setScaleY(1);
+    	});
+	    reportsButton.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showNewsPage();
+			}
+        	
+		});
 	    reportsBox.setAlignment(Pos.CENTER_LEFT);
 	    reportsBox.setSpacing(20);
 	    reportsBox.getChildren().addAll(reportsTitle, reportsText, reportsButton);
-	
+	    
+// Letters Box Section
 	    VBox lettersBox = new VBox();
 	    lettersBox.setPrefWidth(400);
 	    lettersBox.setMinHeight(300);
@@ -227,10 +268,28 @@ public class HomePage extends Application {
 	    Label lettersText = new Label("Shareholder letters from \nWarren Buffet and Charlie Munger");
 	    lettersText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button lettersButton = new Button("Read Letters");
+	    lettersButton.setStyle("-fx-background-color: #542549; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    lettersButton.setOnMouseEntered(event ->{
+	    	lettersButton.setScaleX(1.03);
+	    	lettersButton.setScaleY(1.03);
+    	});
+	    lettersButton.setOnMouseExited(event ->{
+	    	lettersButton.setScaleX(1);
+	    	lettersButton.setScaleY(1);
+    	});
+	    lettersButton.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showLettersPage();
+			}
+        	
+		});
 	    lettersBox.setAlignment(Pos.CENTER_LEFT);
 	    lettersBox.setSpacing(20);
 	    lettersBox.getChildren().addAll(lettersTitle, lettersText, lettersButton);
-	
+	    
+// Subsidiaries Box Section
 	    VBox subsidiariesBox = new VBox();
 	    subsidiariesBox.setPrefWidth(400);
 	    subsidiariesBox.setMinHeight(300);
@@ -240,11 +299,28 @@ public class HomePage extends Application {
 	    Label subsidiariesText = new Label("Berkshire Hathaway wholly owns \n60+ companies");
 	    subsidiariesText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button subsidiariesButton = new Button("See Subsidiaries");
+	    subsidiariesButton.setStyle("-fx-background-color: #15158a; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    subsidiariesButton.setOnMouseEntered(event ->{
+	    	subsidiariesButton.setScaleX(1.03);
+	    	subsidiariesButton.setScaleY(1.03);
+    	});
+	    subsidiariesButton.setOnMouseExited(event ->{
+	    	subsidiariesButton.setScaleX(1);
+	    	subsidiariesButton.setScaleY(1);
+    	});
+	    subsidiariesButton.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showSubsidiariesPage();
+			}
+        	
+		});
 	    subsidiariesBox.setAlignment(Pos.CENTER_LEFT);
 	    subsidiariesBox.setSpacing(20);
 	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, subsidiariesButton);
 	
-	    // Create content section with 2x2 grid layout
+// Create content section with 2x2 grid layout
 	    GridPane contentSection = new GridPane();
 	    contentSection.setStyle("-fx-padding: 50;");
 	    contentSection.setHgap(50);
@@ -375,6 +451,21 @@ public class HomePage extends Application {
 
         // Add button
         Button button = new Button("Read Warren's Letter");
+        button.setOnMouseEntered(event ->{
+        	button.setScaleX(1.03);
+        	button.setScaleY(1.03);
+    	});
+        button.setOnMouseExited(event ->{
+        	button.setScaleX(1);
+        	button.setScaleY(1);
+    	});
+        button.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/SpecialLetters/WEB%20past%20present%20future%202014.pdf"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
         button.setStyle("-fx-background-color: #15158a; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-padding: 10 20;");
         
         // Create ImageView to hold banner image
@@ -437,6 +528,23 @@ public class HomePage extends Application {
 
         // Add button
         Button button = new Button("Learn More");
+        button.setOnMouseEntered(event ->{
+        	button.setScaleX(1.03);
+        	button.setScaleY(1.03);
+    	});
+        button.setOnMouseExited(event ->{
+        	button.setScaleX(1);
+        	button.setScaleY(1);
+    	});
+        button.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showAboutPage();
+			}
+        	
+		});
+        
         button.setStyle("-fx-background-color: #15158a; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-padding: 10 20;");
         
         // Create ImageView to hold banner image

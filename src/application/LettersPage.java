@@ -1,5 +1,8 @@
 package application;
 
+import java.awt.Desktop;
+import java.net.URI;
+
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -25,7 +28,7 @@ public class LettersPage extends Application {
     public void start(Stage primaryStage) {
     	BorderPane root = getRoot();
 
-        Scene scene = new Scene(root, 800, 600);
+        Scene scene = new Scene(root, 1366, 768);
         primaryStage.setTitle("Letters!!!");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -178,59 +181,192 @@ public class LettersPage extends Application {
         // Content Section
         BorderPane centerPane = new BorderPane();
 
-	    // Create Vboxes to hold card contents
-	    VBox newsBox = new VBox();
-	    newsBox.setPrefWidth(400);
-	    newsBox.setMinHeight(300);
-	    newsBox.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
-	    Label newsTitle = new Label("Letters 1");
-	    newsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label newsText = new Label("The latest news from Berkshire \nHathaway");
-	    newsText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
-	    Button newsButton = new Button("Read More");
-	    newsBox.setAlignment(Pos.CENTER_LEFT);
-	    newsBox.setSpacing(20);
-	    newsBox.getChildren().addAll(newsTitle, newsText, newsButton);
+	    // Create VBoxes to hold card contents
 
-	    VBox reportsBox = new VBox();
-	    reportsBox.setMaxWidth(400);
-	    reportsBox.setMinHeight(300);
-	    reportsBox.setStyle("-fx-background-color: #E5E4DA; -fx-padding: 40;");
-	    Label reportsTitle = new Label("Letters 2");
-	    reportsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold;");
-	    Label reportsText = new Label("Annual and quarterly reports from \n1995 to 2023");
-	    reportsText.setStyle("-fx-font-size: 18;");
-	    Button reportsButton = new Button("Read More");
-	    reportsBox.setAlignment(Pos.CENTER_LEFT);
-	    reportsBox.setSpacing(20);
-	    reportsBox.getChildren().addAll(reportsTitle, reportsText, reportsButton);
-	
-	    VBox lettersBox = new VBox();
-	    lettersBox.setPrefWidth(400);
-	    lettersBox.setMinHeight(300);
-	    lettersBox.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
-	    Label lettersTitle = new Label("Letters 3");
-	    lettersTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label lettersText = new Label("Shareholder letters from \nWarren Buffet and Charlie Munger");
-	    lettersText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
-	    Button lettersButton = new Button("Read More");
-	    lettersBox.setAlignment(Pos.CENTER_LEFT);
-	    lettersBox.setSpacing(20);
-	    lettersBox.getChildren().addAll(lettersTitle, lettersText, lettersButton);
-	
-	    VBox subsidiariesBox = new VBox();
-	    subsidiariesBox.setPrefWidth(400);
-	    subsidiariesBox.setMinHeight(300);
-	    subsidiariesBox.setStyle("-fx-background-color: #15158A; -fx-padding: 40;");
-	    Label subsidiariesTitle = new Label("Letters 4");
-	    subsidiariesTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label subsidiariesText = new Label("Berkshire Hathaway wholly owns \n60+ companies");
-	    subsidiariesText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
-	    Button subsidiariesButton = new Button("Read More");
-	    subsidiariesBox.setAlignment(Pos.CENTER_LEFT);
-	    subsidiariesBox.setSpacing(20);
-	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, subsidiariesButton);
-	
+// Button 1
+        VBox b1 = new VBox();
+	    b1.setMaxWidth(600);
+	    b1.setMinHeight(400);
+	    b1.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
+	    
+	    Label sec = new Label("Charlie Munger Special Letter");
+	    sec.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label secText = new Label("Read Vice Chairman Charlie Munger\'s special address "
+	    		+ "\nto Berkshire Hathaway Investors titled \'Past and Future\'");
+	    secText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    Button secButton = new Button("Read Letter");
+	    secButton.setMinSize(200, 50);
+	    secButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    
+	    secButton.setOnMouseEntered(event ->{
+	    	secButton.setScaleX(1.03);
+	    	secButton.setScaleY(1.03);
+    	});
+	    secButton.setOnMouseExited(event ->{
+	    	secButton.setScaleX(1);
+	    	secButton.setScaleY(1);
+    	});
+	    
+	    b1.setAlignment(Pos.CENTER_LEFT);
+	    b1.setSpacing(40);
+	    b1.getChildren().addAll(sec, secText, secButton);
+	    
+	    secButton.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/SpecialLetters/CTM%20past%20present%20future%202014.pdf"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    
+	    
+// Button 2
+	    VBox b2 = new VBox();
+	    b2.setMaxWidth(600);
+	    b2.setMinHeight(400);
+	    b2.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
+	    
+	    Label annual = new Label("Shareholder\'s Letters");
+	    annual.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label anText = new Label("Read Warren Buffet's Annual Berkshire Shareholders Letters "
+	    		+ "\narchiving from 1977 to 2023");
+	    anText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    Button anButton = new Button("View Shareholders Archive");
+	    anButton.setMinSize(200, 50);
+	    anButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    
+	    anButton.setOnMouseEntered(event ->{
+	    	anButton.setScaleX(1.03);
+	    	anButton.setScaleY(1.03);
+    	});
+	    anButton.setOnMouseExited(event ->{
+	    	anButton.setScaleX(1);
+	    	anButton.setScaleY(1);
+    	});
+	    
+	    b2.setAlignment(Pos.CENTER_LEFT);
+	    b2.setSpacing(40);
+	    b2.getChildren().addAll(annual, anText, anButton);
+	    
+	    anButton.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/letters/letters.html"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    
+// Button 3
+	    VBox wescoSection = new VBox();
+	    wescoSection.setMaxWidth(600);
+	    wescoSection.setMinHeight(400);
+	    wescoSection.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
+	    
+	    Label wescoTitle = new Label("Wesco Shareholders Letters");
+	    wescoTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label wescoText = new Label("Read Charlie Munger's Letters to Wesco Shareholders"
+	    		+ "\narchived from 1997 to 2009");
+	    wescoText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    
+	    Button wescoBtn = new Button("View Shareholder Letters");
+	    wescoBtn.setMinSize(200, 50);
+	    wescoBtn.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    
+	    wescoBtn.setOnMouseEntered(event ->{
+	    	wescoBtn.setScaleX(1.03);
+	    	wescoBtn.setScaleY(1.03);
+    	});
+	    wescoBtn.setOnMouseExited(event ->{
+	    	wescoBtn.setScaleX(1);
+	    	wescoBtn.setScaleY(1);
+    	});
+	    
+	    wescoSection.setAlignment(Pos.CENTER_LEFT);
+	    wescoSection.setSpacing(40);
+	    wescoSection.getChildren().addAll(wescoTitle, wescoText, wescoBtn);
+	    
+	    wescoBtn.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/wesco/WescoHome.html"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    
+ // Button 4
+	    VBox warrenSpecial = new VBox();
+	    warrenSpecial.setMaxWidth(600);
+	    warrenSpecial.setMinHeight(400);
+	    warrenSpecial.setStyle("-fx-background-color: #363842; -fx-padding: 20;");
+	    
+	    Label warren = new Label("Special Message from Warren Buffet");
+	    warren.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label warrenText = new Label("Read a Special Message from Warren Buffet on personal "
+	    		+ "\nexpenditure savings through reccomended subsidiaries");
+	    warrenText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    Button comm = new Button("Read Message");
+	    comm.setMinSize(200, 50);
+	    comm.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    
+	    comm.setOnMouseEntered(event ->{
+	    	comm.setScaleX(1.03);
+	    	comm.setScaleY(1.03);
+    	});
+	    comm.setOnMouseExited(event ->{
+	    	comm.setScaleX(1);
+	    	comm.setScaleY(1);
+    	});
+	    warrenSpecial.setAlignment(Pos.CENTER_LEFT);
+	    warrenSpecial.setSpacing(40);
+	    warrenSpecial.getChildren().addAll(warren, warrenText, comm);
+	    
+	    comm.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/SpecialLetters/WEB%20past%20present%20future%202014.pdf"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    
+	    
+	    b1.setOnMouseEntered(event ->{
+            b1.setScaleX(1.03);
+            b1.setScaleY(1.03);
+        });
+        b1.setOnMouseExited(event ->{
+            b1.setScaleX(1);
+            b1.setScaleY(1);
+        });
+        
+        b2.setOnMouseEntered(event ->{
+            b2.setScaleX(1.03);
+            b2.setScaleY(1.03);
+        });
+        b2.setOnMouseExited(event ->{
+            b2.setScaleX(1);
+            b2.setScaleY(1);
+        });
+        
+        wescoSection.setOnMouseEntered(event ->{
+            wescoSection.setScaleX(1.03);
+            wescoSection.setScaleY(1.03);
+        });
+        wescoSection.setOnMouseExited(event ->{
+            wescoSection.setScaleX(1);
+            wescoSection.setScaleY(1);
+        });
+        
+        warrenSpecial.setOnMouseEntered(event ->{
+            warrenSpecial.setScaleX(1.03);
+            warrenSpecial.setScaleY(1.03);
+        });
+        warrenSpecial.setOnMouseExited(event ->{
+        	warrenSpecial.setScaleX(1);
+        	warrenSpecial.setScaleY(1);
+        });
+        
+
+	    
 	    // Create content section with 2x2 grid layout
 	    GridPane contentSection = new GridPane();
 	    contentSection.setStyle("-fx-padding: 50;");
@@ -238,14 +374,14 @@ public class LettersPage extends Application {
 	    contentSection.setVgap(50);
 	    contentSection.setAlignment(Pos.CENTER);
 
-	    contentSection.add(newsBox, 0, 0);
-	    contentSection.add(reportsBox, 1, 0);
-	    contentSection.add(lettersBox, 0, 1);
-	    contentSection.add(subsidiariesBox, 1, 1);
-	
-//	    centerPane.setTop();
+	    contentSection.add(b1, 0, 0);
+	    contentSection.add(b2, 1, 0);
+	    contentSection.add(wescoSection, 0, 1);
+	    contentSection.add(warrenSpecial, 1, 1);
+
+//        	    centerPane.setTop();
 	    centerPane.setCenter(contentSection);
-//	    centerPane.setBottom();
+//        	    centerPane.setBottom();
 	
 	    root.setCenter(centerPane);
 /* ------- END OF CONTENT SECTION ------- */
@@ -327,10 +463,11 @@ public class LettersPage extends Application {
         root.setBottom(footer);
         
  /* ------- END OF FOOTER SECTION ------- */
-	            
+        
         return root;
 
-	}
+    }
+
 
 	public static void main(String[] args) {
         launch(args);
