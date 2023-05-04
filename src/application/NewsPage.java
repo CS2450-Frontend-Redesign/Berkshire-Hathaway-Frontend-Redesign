@@ -32,7 +32,7 @@ public class NewsPage extends Application {
         BorderPane root = getRoot();
 
         Scene scene = new Scene(root, 1280, 720);
-        primaryStage.setTitle("News!!!");
+        primaryStage.setTitle("News & Reports");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -175,7 +175,7 @@ public class NewsPage extends Application {
                 navbar.getChildren().addAll(region, navbarItems);
 
                 root.setTop(navbar);
-        /* ------- END OF HEADER SECTION ------- */
+/* ------- END OF HEADER SECTION ------- */
 
         
 /* ------- CONTENT SECTION ------- */
@@ -183,8 +183,7 @@ public class NewsPage extends Application {
 
         // News label on page
         Label card1 = new Label("Latest News:");
-        //card1.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
-        card1.setStyle("-fx-font-size: 20; -fx-text-fill: red;");
+        card1.setStyle("-fx-font-size: 20; -fx-text-fill: red; -fx-font-weight: bold;");
         Label card2 = new Label("April 27, 2023 News Release");
         card2.setStyle("-fx-text-fill: blue;");
         card2.setUnderline(true);
@@ -201,31 +200,96 @@ public class NewsPage extends Application {
         tabpane.setSide(Side.TOP);
         for (int i = 2023; i >= 1996; i--) {
             Tab tab = new Tab(Integer.toString(i));
+            tab.setStyle("-fx-background-color: #f0efe6;");
             Image emptyImage = new Image(HomePage.class.getResourceAsStream("Empty.jpg"));
             Image newsReleaseImage = new Image(HomePage.class.getResourceAsStream("AnnualNewsRelease.png"));
             Image quarterlyEarningsImage = new Image(HomePage.class.getResourceAsStream("QuarterlyEarnings2.png"));
             Image annualMeetingsImage = new Image(HomePage.class.getResourceAsStream("AnnualMeetings.png"));
             Image miscImage = new Image(HomePage.class.getResourceAsStream("Misc.png"));
-            Image Q1Image = new Image(HomePage.class.getResourceAsStream("Misc.png"));
+            Image Q1Image = new Image(HomePage.class.getResourceAsStream("Q1.png"));
             ImageView newsView = new ImageView(emptyImage);
             Button button = new Button(Integer.toString(i) + " News Releases");
-            button.setStyle("-fx-background-color: #E5E4DA;");
+            button.setStyle("-fx-background-color: #E5E4DA; -fx-border-color: black; -fx-border-width: 2px;");
+            button.setOnMouseEntered(event ->{
+    	    	button.setScaleX(1.03);
+    	    	button.setScaleY(1.03);
+        	});
+    	    button.setOnMouseExited(event ->{
+    	    	button.setScaleX(1);
+    	    	button.setScaleY(1);
+        	});
             Button button2 = new Button(Integer.toString(i) + " Quarterly Earnings");
-            button2.setStyle("-fx-background-color: #E5E4DA;");
+            button2.setStyle("-fx-background-color: #E5E4DA; -fx-border-color: black; -fx-border-width: 2px;");
+            button2.setOnMouseEntered(event ->{
+    	    	button2.setScaleX(1.03);
+    	    	button2.setScaleY(1.03);
+        	});
+    	    button2.setOnMouseExited(event ->{
+    	    	button2.setScaleX(1);
+    	    	button2.setScaleY(1);
+        	});
             Button button3 = new Button(Integer.toString(i) + " Annual Meetings");
-            button3.setStyle("-fx-background-color: #E5E4DA;");
+            button3.setStyle("-fx-background-color: #E5E4DA; -fx-border-color: black; -fx-border-width: 2px;");
+            button3.setOnMouseEntered(event ->{
+    	    	button3.setScaleX(1.03);
+    	    	button3.setScaleY(1.03);
+        	});
+    	    button3.setOnMouseExited(event ->{
+    	    	button3.setScaleX(1);
+    	    	button3.setScaleY(1);
+        	});
             Button button4 = new Button(Integer.toString(i) + " Miscellaneous");
-            button4.setStyle("-fx-background-color: #E5E4DA;");
+            button4.setStyle("-fx-background-color: #E5E4DA; -fx-border-color: black; -fx-border-width: 2px;");
+            button4.setOnMouseEntered(event ->{
+    	    	button4.setScaleX(1.03);
+    	    	button4.setScaleY(1.03);
+        	});
+    	    button4.setOnMouseExited(event ->{
+    	    	button4.setScaleX(1);
+    	    	button4.setScaleY(1);
+        	});
             GridPane gridpane = new GridPane();
         	for (int j = 0; j <= 4; j++) {
         		Button jbutton = new Button("Quarter 1");
-        		jbutton.setStyle("-fx-background-color: #E5E4DA;");
+        		jbutton.setStyle("-fx-background-color: #E5E4DA;  -fx-border-color: black; -fx-border-width: 2px;");
+        		jbutton.setOnMouseEntered(event ->{
+        	    	jbutton.setScaleX(1.03);
+        	    	jbutton.setScaleY(1.03);
+            	});
+        	    jbutton.setOnMouseExited(event ->{
+        	    	jbutton.setScaleX(1);
+        	    	jbutton.setScaleY(1);
+            	});
         		Button jbutton2 = new Button("Quarter 2");
-        		jbutton2.setStyle("-fx-background-color: #E5E4DA;");
+        		jbutton2.setStyle("-fx-background-color: #E5E4DA; -fx-border-color: black; -fx-border-width: 2px;");
+        		jbutton2.setOnMouseEntered(event ->{
+        	    	jbutton2.setScaleX(1.03);
+        	    	jbutton2.setScaleY(1.03);
+            	});
+        	    jbutton2.setOnMouseExited(event ->{
+        	    	jbutton2.setScaleX(1);
+        	    	jbutton2.setScaleY(1);
+            	});
         		Button jbutton3 = new Button("Quarter 3");
-        		jbutton3.setStyle("-fx-background-color: #E5E4DA;");
+        		jbutton3.setStyle("-fx-background-color: #E5E4DA; -fx-border-color: black; -fx-border-width: 2px;");
+        		jbutton3.setOnMouseEntered(event ->{
+        	    	jbutton3.setScaleX(1.03);
+        	    	jbutton3.setScaleY(1.03);
+            	});
+        	    jbutton3.setOnMouseExited(event ->{
+        	    	jbutton3.setScaleX(1);
+        	    	jbutton3.setScaleY(1);
+            	});
         		Button jbutton4 = new Button("Annual");
-        		jbutton4.setStyle("-fx-background-color: #E5E4DA;");
+        		jbutton4.setStyle("-fx-background-color: #E5E4DA; -fx-border-color: black; -fx-border-width: 2px;");
+        		jbutton4.setOnMouseEntered(event ->{
+        	    	jbutton4.setScaleX(1.03);
+        	    	jbutton4.setScaleY(1.03);
+            	});
+        	    jbutton4.setOnMouseExited(event ->{
+        	    	jbutton4.setScaleX(1);
+        	    	jbutton4.setScaleY(1);
+            	});
         		jbutton.setOnAction(e -> {
                     newsView.setImage(Q1Image);
                 });
@@ -265,11 +329,11 @@ public class NewsPage extends Application {
             });
             
             Label newsLabel = new Label("NEWS");
-            newsLabel.setStyle("-fx-font-size: 15;");
+            newsLabel.setStyle("-fx-font-size: 15; -fx-font-weight: bold;");
             newsLabel.setUnderline(true);
             VBox vbox1 = new VBox(10, newsLabel, button, button2, button3, button4);
             Label reportsLabel = new Label("REPORTS");
-            reportsLabel.setStyle("-fx-font-size: 15;");
+            reportsLabel.setStyle("-fx-font-size: 15; -fx-font-weight: bold;");
             reportsLabel.setUnderline(true);
             VBox vbox2 = new VBox(10, reportsLabel, gridpane);
             VBox vbox3 = new VBox(100, vbox1, vbox2);
@@ -285,11 +349,8 @@ public class NewsPage extends Application {
             tab.setContent(hbox);
             tabpane.getTabs().add(tab);
         }
-        tabpane.setStyle("-fx-border-color: black; -fx-background-color: white;");
-        //HBox hbox2 = new HBox(5, card1, card2);
-        //VBox vbox2 = new VBox(10, hbox2,  tabpane);
+        tabpane.setStyle("-fx-border-color: black; -fx-background-color: #e5e4da;");
         VBox vbox2 = new VBox(10, card1, card2,  tabpane);
-        vbox2.setStyle("-fx-background-color: #e5e4da;");
         vbox2.setPadding(new Insets(20, 20, 20, 20));
         root.setCenter(vbox2);
         
