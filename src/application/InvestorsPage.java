@@ -1,5 +1,8 @@
 package application;
 
+import java.awt.Desktop;
+import java.net.URI;
+
 import javafx.application.Application;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -179,58 +182,187 @@ public class InvestorsPage extends Application {
         BorderPane centerPane = new BorderPane();
 
 	    // Create Vboxes to hold card contents
-	    VBox newsBox = new VBox();
-	    newsBox.setPrefWidth(400);
-	    newsBox.setMinHeight(300);
-	    newsBox.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
-	    Label newsTitle = new Label("Investments");
-	    newsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label newsText = new Label("The latest news from Berkshire \nHathaway");
-	    newsText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
-	    Button newsButton = new Button("Read More");
-	    newsBox.setAlignment(Pos.CENTER_LEFT);
-	    newsBox.setSpacing(20);
-	    newsBox.getChildren().addAll(newsTitle, newsText, newsButton);
+	    VBox b1 = new VBox();
+	    b1.setMaxWidth(600);
+	    b1.setMinHeight(400);
+	    b1.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
+	    
+	    Label sec = new Label("SEC Filings");
+	    sec.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label secText = new Label("Visit the US Securities and Exchange Commission's \nwebsite to read about Berkshire Hathaway \nfilings.");
+	    secText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    Button secButton = new Button("Visit SEC");
+	    secButton.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    secButton.setMinSize(80, 50);
+	    b1.setAlignment(Pos.CENTER_LEFT);
+	    b1.setSpacing(40);
+	    b1.getChildren().addAll(sec, secText, secButton);
+	    
+	    secButton.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.sec.gov/cgi-bin/browse-edgar?company=berkshire+hathaway&match=&CIK=&filenum=&State=&Country=&SIC=&owner=exclude&Find=Find+Companies&action=getcompany"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
 
-	    VBox reportsBox = new VBox();
-	    reportsBox.setMaxWidth(400);
-	    reportsBox.setMinHeight(300);
-	    reportsBox.setStyle("-fx-background-color: #E5E4DA; -fx-padding: 40;");
-	    Label reportsTitle = new Label("Investments");
-	    reportsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold;");
-	    Label reportsText = new Label("Annual and quarterly reports from \n1995 to 2023");
-	    reportsText.setStyle("-fx-font-size: 18;");
-	    Button reportsButton = new Button("Read More");
-	    reportsBox.setAlignment(Pos.CENTER_LEFT);
-	    reportsBox.setSpacing(20);
-	    reportsBox.getChildren().addAll(reportsTitle, reportsText, reportsButton);
-	
-	    VBox lettersBox = new VBox();
-	    lettersBox.setPrefWidth(400);
-	    lettersBox.setMinHeight(300);
-	    lettersBox.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
-	    Label lettersTitle = new Label("Investments");
-	    lettersTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label lettersText = new Label("Shareholder letters from \nWarren Buffet and Charlie Munger");
-	    lettersText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
-	    Button lettersButton = new Button("Read More");
-	    lettersBox.setAlignment(Pos.CENTER_LEFT);
-	    lettersBox.setSpacing(20);
-	    lettersBox.getChildren().addAll(lettersTitle, lettersText, lettersButton);
-	
-	    VBox subsidiariesBox = new VBox();
-	    subsidiariesBox.setPrefWidth(400);
-	    subsidiariesBox.setMinHeight(300);
-	    subsidiariesBox.setStyle("-fx-background-color: #15158A; -fx-padding: 40;");
-	    Label subsidiariesTitle = new Label("Investments 4");
-	    subsidiariesTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
-	    Label subsidiariesText = new Label("Berkshire Hathaway wholly owns \n60+ companies");
-	    subsidiariesText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
-	    Button subsidiariesButton = new Button("Read More");
-	    subsidiariesBox.setAlignment(Pos.CENTER_LEFT);
-	    subsidiariesBox.setSpacing(20);
-	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, subsidiariesButton);
-	
+	    VBox b2 = new VBox();
+	    b2.setMaxWidth(600);
+	    b2.setMinHeight(400);
+	    b2.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
+	    
+	    Label annual = new Label("Annual Meeting Information");
+	    annual.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label anText = new Label("The 2023 Annual Meeting will be on \nMay 6, 2023");
+	    anText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    Button anButton = new Button("Read 2023 Shareholders Guide");
+	    anButton.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    anButton.setMinSize(80, 50);
+	    b2.setAlignment(Pos.CENTER_LEFT);
+	    b2.setSpacing(40);
+	    b2.getChildren().addAll(annual, anText, anButton);
+	    
+	    anButton.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/meet01/visguide2023.pdf"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    
+	    VBox b3 = new VBox();
+	    b3.setMaxWidth(600);
+	    b3.setMinHeight(400);
+	    b3.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
+	    
+	    Label pres = new Label("Berkshire Hathaway Energy \nInvestor Presentations");
+	    pres.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Button pres22 = new Button("Read 2022 Berkshire Hathaway Energy Investor Presentation");
+	    pres22.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    pres22.setMinSize(200, 50);
+	    Button pres21 = new Button("Read 2021 Berkshire Hathaway Energy Investor Presentation");
+	    pres21.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    pres21.setMinSize(200, 50);
+	    b3.setAlignment(Pos.CENTER_LEFT);
+	    b3.setSpacing(40);
+	    b3.getChildren().addAll(pres, pres22, pres21);
+	    
+	    pres22.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/bhenergy/BHE2022InvestPresent.pdf"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    pres21.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/bhenergy/BHE2021InvestPresent.pdf"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    
+	    VBox b4 = new VBox();
+	    b4.setMaxWidth(600);
+	    b4.setMinHeight(400);
+	    b4.setStyle("-fx-background-color: #363842; -fx-padding: 20;");
+	    
+	    Label stock = new Label("Common Stock Information");
+	    stock.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Button comp = new Button("Read Comparative Rights and Relative Prices of Class A and B Stock");
+	    comp.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    comp.setMinSize(200, 50);
+	    Button comm = new Button("Read Common stock and stock transfer agent information");
+	    comm.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    comm.setMinSize(200, 50);
+	    b4.setAlignment(Pos.CENTER_LEFT);
+	    b4.setSpacing(40);
+	    b4.getChildren().addAll(stock, comp, comm);
+	    
+	    comp.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/brkshareholderinfo/compab.pdf"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    comm.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/brkshareholderinfo/transferagentinfo.pdf"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    
+	    VBox b5 = new VBox();
+	    b5.setMaxWidth(600);
+	    b5.setMinHeight(400);
+	    b5.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
+	    
+	    Label act = new Label("Investments in Activision \nCommon Stock");
+	    act.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label actLbl = new Label("Today I read your February 15 story about \nlast year's Activision purchases by \nBerkshire...");
+	    actLbl.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    Button actBtn = new Button("Read the Full Document");
+	    actBtn.setStyle("-fx-background-color: lightgrey; -fx-font-size: 12pt; -fx-font-weight: bold;");
+	    actBtn.setMinSize(200, 50);
+	    b5.setAlignment(Pos.CENTER_LEFT);
+	    b5.setSpacing(40);
+	    b5.getChildren().addAll(act, actLbl, actBtn);
+	    
+	    actBtn.setOnAction(e -> {
+	    	try {
+				Desktop.getDesktop().browse(new URI("https://www.berkshirehathaway.com/activisionltr.pdf"));
+			} catch (Exception r) {
+				System.out.println("Try another link");
+			}
+	    });
+	    
+	    b1.setOnMouseEntered(event ->{
+            b1.setScaleX(1.03);
+            b1.setScaleY(1.03);
+        });
+        b1.setOnMouseExited(event ->{
+            b1.setScaleX(1);
+            b1.setScaleY(1);
+        });
+        
+        b2.setOnMouseEntered(event ->{
+            b2.setScaleX(1.03);
+            b2.setScaleY(1.03);
+        });
+        b2.setOnMouseExited(event ->{
+            b2.setScaleX(1);
+            b2.setScaleY(1);
+        });
+        
+        b3.setOnMouseEntered(event ->{
+            b3.setScaleX(1.03);
+            b3.setScaleY(1.03);
+        });
+        b3.setOnMouseExited(event ->{
+            b3.setScaleX(1);
+            b3.setScaleY(1);
+        });
+        
+        b4.setOnMouseEntered(event ->{
+            b4.setScaleX(1.03);
+            b4.setScaleY(1.03);
+        });
+        b4.setOnMouseExited(event ->{
+            b4.setScaleX(1);
+            b4.setScaleY(1);
+        });
+        
+        b5.setOnMouseEntered(event ->{
+            b5.setScaleX(1.03);
+            b5.setScaleY(1.03);
+        });
+        b5.setOnMouseExited(event ->{
+            b5.setScaleX(1);
+            b5.setScaleY(1);
+        });
+	    
 	    // Create content section with 2x2 grid layout
 	    GridPane contentSection = new GridPane();
 	    contentSection.setStyle("-fx-padding: 50;");
@@ -238,10 +370,11 @@ public class InvestorsPage extends Application {
 	    contentSection.setVgap(50);
 	    contentSection.setAlignment(Pos.CENTER);
 
-	    contentSection.add(newsBox, 0, 0);
-	    contentSection.add(reportsBox, 1, 0);
-	    contentSection.add(lettersBox, 0, 1);
-	    contentSection.add(subsidiariesBox, 1, 1);
+	    contentSection.add(b1, 0, 0);
+	    contentSection.add(b2, 1, 0);
+	    contentSection.add(b3, 0, 1);
+	    contentSection.add(b4, 1, 1);
+	    contentSection.add(b5, 0, 2);
 	
 //	    centerPane.setTop();
 	    centerPane.setCenter(contentSection);
