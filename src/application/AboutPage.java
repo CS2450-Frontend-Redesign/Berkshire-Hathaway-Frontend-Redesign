@@ -8,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -26,6 +27,9 @@ public class AboutPage extends Application {
     @Override
     public void start(Stage primaryStage) {
     	BorderPane root = getRoot();
+    	
+    	ScrollPane scrollPane = new ScrollPane();
+    	scrollPane.setContent(root);
 
         Scene scene = new Scene(root, 800, 600);
         primaryStage.setTitle("About!!!");
@@ -199,7 +203,7 @@ public class AboutPage extends Application {
 
 	    // Create Vboxes to hold card contents
 	    VBox newsBox = new VBox();
-	    newsBox.setPrefWidth(400);
+	    newsBox.setPrefWidth(380);
 	    newsBox.setMinHeight(350);
 	    newsBox.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
 	    Label newsTitle = new Label("Sustainability");
@@ -222,12 +226,12 @@ public class AboutPage extends Application {
     	});
 
 	    VBox reportsBox = new VBox();
-	    reportsBox.setMaxWidth(400);
+	    reportsBox.setMaxWidth(380);
 	    reportsBox.setMinHeight(350);
 	    reportsBox.setStyle("-fx-background-color: #E5E4DA; -fx-padding: 40;");
 	    Label reportsTitle = new Label("Diversity");
 	    reportsTitle.setStyle("-fx-font-size: 30; -fx-font-weight: bold;");
-	    Label reportsText = new Label("Information regarding our unwavering \nfocus on diversity");
+	    Label reportsText = new Label("Information regarding our \nunwavering focus on diversity");
 	    reportsText.setStyle("-fx-font-size: 18;");
 	    Button reportsButton = new Button("Read More");
 	    reportsBox.setAlignment(Pos.CENTER_LEFT);
@@ -245,7 +249,7 @@ public class AboutPage extends Application {
     	});
 	
 	    VBox lettersBox = new VBox();
-	    lettersBox.setPrefWidth(400);
+	    lettersBox.setPrefWidth(380);
 	    lettersBox.setMinHeight(350);
 	    lettersBox.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
 	    Label lettersTitle = new Label("Contributions to \nFive Foundations");
@@ -268,7 +272,7 @@ public class AboutPage extends Application {
     	});
 	
 	    VBox subsidiariesBox = new VBox();
-	    subsidiariesBox.setPrefWidth(400);
+	    subsidiariesBox.setPrefWidth(380);
 	    subsidiariesBox.setMinHeight(350);
 	    subsidiariesBox.setStyle("-fx-background-color: #15158A; -fx-padding: 40;");
 	    Label subsidiariesTitle = new Label("Code of Business \nConduct and Ethics");
@@ -291,10 +295,10 @@ public class AboutPage extends Application {
     	});
 	    
 	    VBox Box5 = new VBox();
-	    Box5.setPrefWidth(400);
+	    Box5.setPrefWidth(380);
 	    Box5.setMinHeight(350);
 	    Box5.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
-	    Label Box5Title = new Label("Insider Trading Policy");
+	    Label Box5Title = new Label("Insider Trading \nPolicy");
 	    Box5Title.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
 	    Label Box5Text = new Label("Navigate through our no-tolerance \npolicy on Insider Trading");
 	    Box5Text.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
@@ -314,7 +318,7 @@ public class AboutPage extends Application {
     	});
 	    
 	    VBox Box6 = new VBox();
-	    Box6.setPrefWidth(400);
+	    Box6.setPrefWidth(380);
 	    Box6.setMinHeight(350);
 	    Box6.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
 	    Label Box6Title = new Label("Corporate \nGovernance Guide");

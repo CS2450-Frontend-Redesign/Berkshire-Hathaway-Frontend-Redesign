@@ -30,7 +30,7 @@ public class HomePage extends Application {
     	ScrollPane scrollPane = new ScrollPane();
     	scrollPane.setContent(root);
 
-        Scene scene = new Scene(scrollPane, 1600, 900);
+        Scene scene = new Scene(scrollPane, 1366, 768);
         primaryStage.setTitle("Home!!!");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -219,6 +219,15 @@ public class HomePage extends Application {
 	    Label newsText = new Label("The latest news from Berkshire \nHathaway");
 	    newsText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button newsButton = new Button("Read News");
+	    newsButton.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showNewsPage();
+			}
+        	
+		});
+	    
 	    newsBox.setAlignment(Pos.CENTER_LEFT);
 	    newsBox.setSpacing(20);
 	    newsBox.getChildren().addAll(newsTitle, newsText, newsButton);
@@ -232,6 +241,25 @@ public class HomePage extends Application {
 	    Label reportsText = new Label("Annual and quarterly reports from \n1995 to 2023");
 	    reportsText.setStyle("-fx-font-size: 18;");
 	    Button reportsButton = new Button("Read Reports");
+	    reportsButton.setOnMouseEntered(event ->{
+	    	reportsButton.setScaleX(1.03);
+	    	reportsButton.setScaleY(1.03);
+	    	reportsTitle.setUnderline(true);
+    	});
+	    reportsButton.setOnMouseExited(event ->{
+	    	reportsButton.setScaleX(1);
+	    	reportsButton.setScaleY(1);
+	    	reportsTitle.setUnderline(false);
+    	});
+	    reportsButton.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showReportsPage();
+			}
+        	
+		});
+	    
 	    reportsBox.setAlignment(Pos.CENTER_LEFT);
 	    reportsBox.setSpacing(20);
 	    reportsBox.getChildren().addAll(reportsTitle, reportsText, reportsButton);
@@ -245,6 +273,15 @@ public class HomePage extends Application {
 	    Label lettersText = new Label("Shareholder letters from \nWarren Buffet and Charlie Munger");
 	    lettersText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button lettersButton = new Button("Read Letters");
+	    lettersButton.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showLettersPage();
+			}
+        	
+		});
+	    
 	    lettersBox.setAlignment(Pos.CENTER_LEFT);
 	    lettersBox.setSpacing(20);
 	    lettersBox.getChildren().addAll(lettersTitle, lettersText, lettersButton);
@@ -258,6 +295,14 @@ public class HomePage extends Application {
 	    Label subsidiariesText = new Label("Berkshire Hathaway wholly owns \n60+ companies");
 	    subsidiariesText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
 	    Button subsidiariesButton = new Button("See Subsidiaries");
+	    subsidiariesButton.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showSubsidiariesPage();
+			}
+        	
+		});
 	    subsidiariesBox.setAlignment(Pos.CENTER_LEFT);
 	    subsidiariesBox.setSpacing(20);
 	    subsidiariesBox.getChildren().addAll(subsidiariesTitle, subsidiariesText, subsidiariesButton);
