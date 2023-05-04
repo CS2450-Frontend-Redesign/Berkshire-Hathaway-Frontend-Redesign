@@ -16,12 +16,11 @@ import javafx.scene.control.TabPane.TabClosingPolicy;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class NewsPage extends Application {
@@ -49,13 +48,10 @@ public class NewsPage extends Application {
         navbar.setStyle("-fx-background-color: #363842;");
 
         // Add company logo to the left of the navbar
-        Rectangle companyName = new Rectangle(0,0,200,60);
-        //companyName.setFill(Color.web("#E5E4DA"));
         Image image = new Image(HomePage.class.getResourceAsStream("BH.png"));
-        //ImageView companyName = new ImageView(image);
-        companyName.setFill(new ImagePattern(image));
-        //companyName.setFitHeight(50);
-        //companyName.setPreserveRatio(true);
+        ImageView companyName = new ImageView(image);
+        companyName.setFitHeight(50);
+        companyName.setPreserveRatio(true);
         navbar.getChildren().add(companyName);
         
         //Home
@@ -80,13 +76,7 @@ public class NewsPage extends Application {
         
         //News
         Label news = new Label("News");
-        news.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
-        news.setOnMouseEntered(e -> {
-        	news.setUnderline(true);
-        });
-        news.setOnMouseExited(e -> {
-        	news.setUnderline(false);
-        });
+        news.setStyle("-fx-text-fill: white;");
         news.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -98,13 +88,7 @@ public class NewsPage extends Application {
         
         //Reports
         Label reports = new Label("Reports");
-        reports.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
-        reports.setOnMouseEntered(e -> {
-        	reports.setUnderline(true);
-        });
-        reports.setOnMouseExited(e -> {
-        	reports.setUnderline(false);
-        });
+        reports.setStyle("-fx-text-fill: white;");
         reports.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -116,13 +100,7 @@ public class NewsPage extends Application {
         
         //Letters
         Label letters = new Label("Letters");
-        letters.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
-        letters.setOnMouseEntered(e -> {
-        	letters.setUnderline(true);
-        });
-        letters.setOnMouseExited(e -> {
-        	letters.setUnderline(false);
-        });
+        letters.setStyle("-fx-text-fill: white;");
         letters.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -134,13 +112,7 @@ public class NewsPage extends Application {
         
         //Subsidiaries
         Label subsidiaries = new Label("Subsidiaries");
-        subsidiaries.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
-        subsidiaries.setOnMouseEntered(e -> {
-        	subsidiaries.setUnderline(true);
-        });
-        subsidiaries.setOnMouseExited(e -> {
-        	subsidiaries.setUnderline(false);
-        });
+        subsidiaries.setStyle("-fx-text-fill: white;");
         subsidiaries.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -152,13 +124,7 @@ public class NewsPage extends Application {
         
         //About
         Label about = new Label("About");
-        about.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
-        about.setOnMouseEntered(e -> {
-        	about.setUnderline(true);
-        });
-        about.setOnMouseExited(e -> {
-        	about.setUnderline(false);
-        });
+        about.setStyle("-fx-text-fill: white;");
         about.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -170,13 +136,7 @@ public class NewsPage extends Application {
         
         //Investments
         Label investments = new Label("Investments");
-        investments.setStyle("-fx-text-fill: white; -fx-font-size: 14pt");
-        investments.setOnMouseEntered(e -> {
-        	investments.setUnderline(true);
-        });
-        investments.setOnMouseExited(e -> {
-        	investments.setUnderline(false);
-        });
+        investments.setStyle("-fx-text-fill: white;");
         investments.setOnMouseClicked(new EventHandler<Event>() {
 
 			@Override
@@ -198,15 +158,9 @@ public class NewsPage extends Application {
 /* ------- CONTENT SECTION ------- */
 /* -- (between Header and Footer) -- */
 
-        // Create HBox to hold content on the left half of the section ********************************
-        HBox leftContent = new HBox();
-        leftContent.setSpacing(10);
-        leftContent.setAlignment(Pos.CENTER_LEFT);
-        // ****************************************************************************************
-
-
         // News label on page
-        Label card1 = new Label("Latest News");
+        Label card1 = new Label("Latest News:");
+        //card1.setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
         card1.setStyle("-fx-font-size: 20; -fx-text-fill: red;");
         Label card2 = new Label("April 27, 2023 News Release");
         card2.setStyle("-fx-text-fill: blue;");
@@ -226,14 +180,48 @@ public class NewsPage extends Application {
             Tab tab = new Tab(Integer.toString(i));
             Image emptyImage = new Image(HomePage.class.getResourceAsStream("Empty.jpg"));
             Image newsReleaseImage = new Image(HomePage.class.getResourceAsStream("AnnualNewsRelease.png"));
-            Image quarterlyEarningsImage = new Image(HomePage.class.getResourceAsStream("QuarterlyEarnings.png"));
+            Image quarterlyEarningsImage = new Image(HomePage.class.getResourceAsStream("QuarterlyEarnings2.png"));
             Image annualMeetingsImage = new Image(HomePage.class.getResourceAsStream("AnnualMeetings.png"));
             Image miscImage = new Image(HomePage.class.getResourceAsStream("Misc.png"));
+            Image Q1Image = new Image(HomePage.class.getResourceAsStream("Misc.png"));
             ImageView newsView = new ImageView(emptyImage);
             Button button = new Button(Integer.toString(i) + " News Releases");
+            button.setStyle("-fx-background-color: #E5E4DA;");
             Button button2 = new Button(Integer.toString(i) + " Quarterly Earnings");
+            button2.setStyle("-fx-background-color: #E5E4DA;");
             Button button3 = new Button(Integer.toString(i) + " Annual Meetings");
+            button3.setStyle("-fx-background-color: #E5E4DA;");
             Button button4 = new Button(Integer.toString(i) + " Miscellaneous");
+            button4.setStyle("-fx-background-color: #E5E4DA;");
+            GridPane gridpane = new GridPane();
+        	for (int j = 0; j <= 4; j++) {
+        		Button jbutton = new Button("Quarter 1");
+        		jbutton.setStyle("-fx-background-color: #E5E4DA;");
+        		Button jbutton2 = new Button("Quarter 2");
+        		jbutton2.setStyle("-fx-background-color: #E5E4DA;");
+        		Button jbutton3 = new Button("Quarter 3");
+        		jbutton3.setStyle("-fx-background-color: #E5E4DA;");
+        		Button jbutton4 = new Button("Annual");
+        		jbutton4.setStyle("-fx-background-color: #E5E4DA;");
+        		jbutton.setOnAction(e -> {
+                    newsView.setImage(Q1Image);
+                });
+        		jbutton2.setOnAction(e -> {
+                    newsView.setImage(Q1Image);
+                });
+        		jbutton3.setOnAction(e -> {
+                    newsView.setImage(Q1Image);
+                });
+        		jbutton4.setOnAction(e -> {
+                    newsView.setImage(Q1Image);
+                });
+        		gridpane.add(jbutton, 0, 0);
+        		gridpane.add(jbutton2, 0, 1);
+        		gridpane.add(jbutton3, 1, 0);
+        		gridpane.add(jbutton4, 1, 1);
+        		gridpane.setHgap(10);
+                gridpane.setVgap(10);
+        	}
             if (i == 2023) {
                 card2.setOnMouseClicked(e -> {
                     tabpane.getSelectionModel().select(tab);
@@ -252,44 +240,35 @@ public class NewsPage extends Application {
             button4.setOnAction(e -> {
                 newsView.setImage(miscImage);
             });
-            VBox vbox1 = new VBox(30, button, button2, button3, button4);
-            vbox1.setPadding(new Insets(40, 40, 40, 40));
-            vbox1.setAlignment(Pos.CENTER_LEFT);
+            
+            Label newsLabel = new Label("NEWS");
+            newsLabel.setStyle("-fx-font-size: 15;");
+            newsLabel.setUnderline(true);
+            VBox vbox1 = new VBox(10, newsLabel, button, button2, button3, button4);
+            Label reportsLabel = new Label("REPORTS");
+            reportsLabel.setStyle("-fx-font-size: 15;");
+            reportsLabel.setUnderline(true);
+            VBox vbox2 = new VBox(10, reportsLabel, gridpane);
+            VBox vbox3 = new VBox(100, vbox1, vbox2);
+            vbox3.setPadding(new Insets(40, 40, 40, 40));
+            vbox3.setAlignment(Pos.CENTER_LEFT);
             ScrollPane newsScroll = new ScrollPane();
             newsScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
             newsScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
             newsScroll.setContent(newsView);
             newsScroll.setPrefViewportWidth(1200);
             newsScroll.setPrefViewportHeight(1000);
-            //newsScroll.setFitToWidth(true);
-            //newsScroll.setFitToHeight(true);
-            HBox hbox = new HBox(10, vbox1, newsScroll);
+            HBox hbox = new HBox(10, vbox3, newsScroll);
             tab.setContent(hbox);
             tabpane.getTabs().add(tab);
         }
-        //Tab tab2 = new Tab("Pre 2001");
-        //tabpane.getTabs().add(tab2);
-        tabpane.setStyle("-fx-border-color: black; -fx-background-color: #e5e4da;");
+        tabpane.setStyle("-fx-border-color: black; -fx-background-color: white;");
+        //HBox hbox2 = new HBox(5, card1, card2);
+        //VBox vbox2 = new VBox(10, hbox2,  tabpane);
         VBox vbox2 = new VBox(10, card1, card2,  tabpane);
         vbox2.setStyle("-fx-background-color: #e5e4da;");
         vbox2.setPadding(new Insets(20, 20, 20, 20));
         root.setCenter(vbox2);
-
-        /*Rectangle box = new Rectangle(0, 0);
-        box.setFill(null);
-        box.setStroke(Color.web("#15158a",1.0));
-        box.setStrokeWidth(2.0);
-        Label aboutLabel = new Label("NEWS");
-        aboutLabel.setStyle("-fx-background-color: whitesmoke; -fx-text-fill: #542549; -fx-font-size: 24; -fx-padding: 0 5;");
-        AnchorPane pane = new AnchorPane();
-        pane.getChildren().addAll(box, aboutLabel);
-        AnchorPane.setTopAnchor(box, 15.0);
-        AnchorPane.setTopAnchor(aboutLabel, 0.0);
-        AnchorPane.setLeftAnchor(box, 10.0);
-        AnchorPane.setLeftAnchor(aboutLabel, 40.0);
-        box.widthProperty().bind(pane.widthProperty().subtract(20));
-        box.heightProperty().bind(pane.heightProperty().subtract(25));
-        root.setCenter(pane);*/
         
 /* ------- END OF CONTENT SECTION ------- */
 
