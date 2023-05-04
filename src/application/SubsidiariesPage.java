@@ -183,6 +183,20 @@ public class SubsidiariesPage extends Application {
         BorderPane centerPane = new BorderPane();
         
         Label ourComp = new Label("Our Companies");
+        ourComp.setOnMouseEntered(e -> {
+        	ourComp.setUnderline(true);
+        });
+        ourComp.setOnMouseExited(e -> {
+        	ourComp.setUnderline(false);
+        });
+        ourComp.setOnMouseClicked(new EventHandler<Event>() {
+
+			@Override
+			public void handle(Event arg0) {
+				MainPage.showSubsidiariesPage();
+			}
+        	
+		});
         ourComp.setStyle("-fx-font-size: 40; -fx-font-weight: bold; -fx-font-family: georgia; -fx-padding: 20");
         ourComp.setAlignment(Pos.CENTER);
         VBox title = new VBox(ourComp);

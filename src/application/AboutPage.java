@@ -180,7 +180,6 @@ public class AboutPage extends Application {
 
         // Content Section
         BorderPane centerPane = new BorderPane();
-        
 
 	    // Create Vboxes to hold card contents
 	    VBox newsBox = new VBox();
@@ -438,6 +437,7 @@ public class AboutPage extends Application {
 	   // root.setCenter(centerPane);
         
         Rectangle box = new Rectangle(0, 0);
+        box.setStyle("-fx-padding: 20px");
         box.setFill(null);
         box.setStroke(Color.web("#15158a",1.0));
         box.setStrokeWidth(2.0);

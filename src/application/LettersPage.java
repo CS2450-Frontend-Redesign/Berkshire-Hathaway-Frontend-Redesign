@@ -187,7 +187,7 @@ public class LettersPage extends Application {
         VBox b1 = new VBox();
 	    b1.setMaxWidth(600);
 	    b1.setMinHeight(400);
-	    b1.setStyle("-fx-background-color: #542549; -fx-padding: 40;");
+	    b1.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
 	    
 	    Label sec = new Label("Charlie Munger Special Letter");
 	    sec.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
@@ -224,16 +224,16 @@ public class LettersPage extends Application {
 	    VBox b2 = new VBox();
 	    b2.setMaxWidth(600);
 	    b2.setMinHeight(400);
-	    b2.setStyle("-fx-background-color: #363842; -fx-padding: 40;");
+	    b2.setStyle("-fx-background-color: #E5E4DA; -fx-padding: 40;");
 	    
-	    Label annual = new Label("Shareholder\'s Letters");
-	    annual.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
+	    Label annual = new Label("BH Shareholders Letters");
+	    annual.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: black;");
 	    Label anText = new Label("Read Warren Buffet's Annual Berkshire Shareholders Letters "
 	    		+ "\narchiving from 1977 to 2023");
-	    anText.setStyle("-fx-font-size: 18; -fx-text-fill: white;");
+	    anText.setStyle("-fx-font-size: 18; -fx-text-fill: black;");
 	    Button anButton = new Button("View Shareholders Archive");
 	    anButton.setMinSize(200, 50);
-	    anButton.setStyle("-fx-background-color: null; -fx-text-fill: #FFFFFF; -fx-font-size: 16; -fx-border-color: white; -fx-border-width: 2px;");
+	    anButton.setStyle("-fx-background-color: null; -fx-text-fill: #000000; -fx-font-size: 16; -fx-border-color: black; -fx-border-width: 2px;");
 	    
 	    anButton.setOnMouseEntered(event ->{
 	    	anButton.setScaleX(1.03);
@@ -297,7 +297,7 @@ public class LettersPage extends Application {
 	    VBox warrenSpecial = new VBox();
 	    warrenSpecial.setMaxWidth(600);
 	    warrenSpecial.setMinHeight(400);
-	    warrenSpecial.setStyle("-fx-background-color: #363842; -fx-padding: 20;");
+	    warrenSpecial.setStyle("-fx-background-color: #15158A; -fx-padding: 20;");
 	    
 	    Label warren = new Label("Special Message from Warren Buffet");
 	    warren.setStyle("-fx-font-size: 30; -fx-font-weight: bold; -fx-text-fill: white;");
