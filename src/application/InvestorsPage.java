@@ -480,6 +480,67 @@ public class InvestorsPage extends Application {
         Label phone = new Label("Phone: +1 402-346-1400.");
         phone.setStyle("-fx-text-fill: white;");
         
+        legal.setOnMouseEntered(e -> {
+        	legal.setUnderline(true);
+        });
+        legal.setOnMouseExited(e -> {
+        	legal.setUnderline(false);
+        });
+        copyright.setOnMouseEntered(e -> {
+        	copyright.setUnderline(true);
+        });
+        copyright.setOnMouseExited(e -> {
+        	copyright.setUnderline(false);
+        });
+        privacyPolicy.setOnMouseEntered(e -> {
+        	privacyPolicy.setUnderline(true);
+        });
+        privacyPolicy.setOnMouseExited(e -> {
+        	privacyPolicy.setUnderline(false);
+        });
+        berkshireInc.setOnMouseEntered(e -> {
+        	berkshireInc.setUnderline(true);
+        });
+        berkshireInc.setOnMouseExited(e -> {
+        	berkshireInc.setUnderline(false);
+        });
+        termsOfService.setOnMouseEntered(e -> {
+        	termsOfService.setUnderline(true);
+        });
+        termsOfService.setOnMouseExited(e -> {
+        	termsOfService.setUnderline(false);
+        });
+        twitter.setOnMouseEntered(e -> {
+        	twitter.setUnderline(true);
+        });
+        twitter.setOnMouseExited(e -> {
+        	twitter.setUnderline(false);
+        });
+        facebook.setOnMouseEntered(e -> {
+        	facebook.setUnderline(true);
+        });
+        facebook.setOnMouseExited(e -> {
+        	facebook.setUnderline(false);
+        });
+        instagram.setOnMouseEntered(e -> {
+        	instagram.setUnderline(true);
+        });
+        instagram.setOnMouseExited(e -> {
+        	instagram.setUnderline(false);
+        });
+        email.setOnMouseEntered(e -> {
+        	email.setUnderline(true);
+        });
+        email.setOnMouseExited(e -> {
+        	email.setUnderline(false);
+        });
+        phone.setOnMouseEntered(e -> {
+        	phone.setUnderline(true);
+        });
+        phone.setOnMouseExited(e -> {
+        	phone.setUnderline(false);
+        });
+        
         // Left content
         VBox footerLeft = new VBox(connectWithUs,
                                     new VBox(twitter, 
