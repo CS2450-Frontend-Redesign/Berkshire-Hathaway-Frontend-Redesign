@@ -9,12 +9,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -191,8 +193,24 @@ public class AboutPage extends Application {
 
 
 /* ------- CONTENT SECTION ------- */
+        
+        Rectangle box = new Rectangle(0, 0);
+        box.setFill(null);
+        box.setStroke(Color.web("#15158a",1.0));
+        box.setStrokeWidth(2.0);
+        Label aboutLabel = new Label("Corporate Governance and Sustainability");
+        aboutLabel.setStyle("-fx-background-color: whitesmoke; -fx-text-fill: #542549; -fx-font-size: 24; -fx-padding: 0 5;");
+        AnchorPane pane = new AnchorPane();
+        pane.getChildren().addAll(box, aboutLabel);
+        AnchorPane.setTopAnchor(box, 15.0);
+        AnchorPane.setTopAnchor(aboutLabel, 0.0);
+        AnchorPane.setLeftAnchor(box, 10.0);
+        AnchorPane.setLeftAnchor(aboutLabel, 40.0);
+        box.widthProperty().bind(pane.widthProperty().subtract(20));
+        box.heightProperty().bind(pane.heightProperty().subtract(25));   
+        root.setCenter(pane);
 /* -- (between Header and Footer) -- */
-
+/*
         // Content Section
         BorderPane centerPane = new BorderPane();
 
@@ -266,6 +284,7 @@ public class AboutPage extends Application {
 //	    centerPane.setBottom();
 	
 	    root.setCenter(centerPane);
+*/	    
 /* ------- END OF CONTENT SECTION ------- */
 
 	    
